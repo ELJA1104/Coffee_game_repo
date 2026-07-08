@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dboyk3dmxbr44"]
+
+[ext_resource type="Script" uid="uid://bi8t7wmqhm7wu" path="res://idk.gd" id="1_cdowr"]
+[ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="1_tbss1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdowr"]
+size = Vector2(136, 136)
+
+[node name="Node2D" type="Control" unique_id=1530620051]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cdowr")
+
+[node name="Label" type="Label" parent="." unique_id=2112409142]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="." unique_id=1482414101]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_tbss1")
+
+[node name="Area2D" type="Area2D" parent="Button" unique_id=186657799]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D" unique_id=584123671]
+position = Vector2(68, 68)
+shape = SubResource("RectangleShape2D_cdowr")
