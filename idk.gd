@@ -1,9 +1,6 @@
 extends Node2D
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 945a75bdd4b009fcf7ebc47764074a6ff0f61815
 @onready var label :Label =$Label
 @onready var button:Button = $Button
 @onready var times :int = 1
