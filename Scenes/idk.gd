@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var label :Label =$Label
 @onready var button:Button = $Button
 @onready var times :int = 1
