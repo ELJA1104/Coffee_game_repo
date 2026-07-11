@@ -1,6 +1,6 @@
 extends Control
 
-var coffee_grinder = global.position
+
 @onready var label :Label =$Label
 @onready var button:Button = $Button
 @onready var times :int = 1
