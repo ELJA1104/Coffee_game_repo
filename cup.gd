@@ -8,7 +8,3 @@ func hide_cup():
 	
 func show_cup():
 	get_node('item(cup)').visible = true
-
-
-func teleport_cup_to_grinder(position_Grinder: Vector2):
-	global_position = position_Grinder

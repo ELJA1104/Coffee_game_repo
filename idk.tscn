@@ -6,7 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdowr"]
 size = Vector2(79, 43)
 
+<<<<<<< HEAD
+[node name="Grinder" type="Node2D" unique_id=1045133477]
+=======
 [node name="Grinder" type="Node2D" unique_id=2071495436]
+>>>>>>> 945a75bdd4b009fcf7ebc47764074a6ff0f61815
 script = ExtResource("1_cdowr")
 
 [node name="Button" type="Button" parent="." unique_id=1482414101]
