@@ -1,11 +1,13 @@
 extends Node2D
 
+func _ready():
+	add_to_group("coffe bean")
+	
 func hide_coffe_bean():
 	get_node('item(coffe bean)').visible = false
 	
 func show_coffe_bean():
 	get_node('item(coffe bean)').visible = true
 
-func tp_cup():
-	global_position = lerp(global_position,nblablabla,0.1)
-	pass
+func tp_coffe_bean():
+	global_position = lerp(global_position,coffee_grinder,0.2)
