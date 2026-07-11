@@ -1,11 +1,6 @@
 [gd_scene format=3 uid="uid://dboyk3dmxbr44"]
 
 [ext_resource type="Script" uid="uid://bi8t7wmqhm7wu" path="res://idk.gd" id="1_cdowr"]
-[ext_resource type="Script" uid="uid://cj1ebhnkbppiw" path="res://rigid_body_2d.gd" id="2_7ibg8"]
-[ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="3_iplrv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4bhc"]
-size = Vector2(40, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdowr"]
 size = Vector2(79, 43)
@@ -18,17 +13,6 @@ offset_top = 181.0
 offset_right = 266.0
 offset_bottom = 181.0
 script = ExtResource("1_cdowr")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=477834187]
-position = Vector2(-65, 0)
-script = ExtResource("2_7ibg8")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1881759400]
-scale = Vector2(0.3125, 0.109375)
-texture = ExtResource("3_iplrv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1270096310]
-shape = SubResource("RectangleShape2D_j4bhc")
 
 [node name="Button" type="Button" parent="." unique_id=1482414101]
 layout_mode = 0
@@ -68,5 +52,3 @@ position = Vector2(2, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=584123671]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_cdowr")
-
-[connection signal="body_entered" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
