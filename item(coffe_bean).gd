@@ -16,15 +16,7 @@ func _input(event: InputEvent) -> void:
 			when_is_grab_coffe_bean = false
 #========================================================================================
 
-func teleport_cup_to_position_Grinder(position_Grinder: Vector2):
-	global_position = position_Grinder
 
-func teleport_cup_to_position_Coffeebrewer(position_Coffeebrewer: Vector2):
-	global_position = position_Coffeebrewer
-	
-	
-	
-	
 	
 	
 
