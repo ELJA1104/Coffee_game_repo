@@ -8,3 +8,6 @@ func hide_cup():
 	
 func show_cup():
 	get_node('item(cup)').visible = true
+
+func tp_cup():
+	global_position = lerp(global_position,coffee_grinder,0.2)
