@@ -24,7 +24,7 @@ func teleport_cup_to_position_Coffeebrewer(position_Coffeebrewer: Vector2):
 	
 signal teleport_requested_form_Grinder(position_Grinder: Vector2)#only can put in area2d
 	
-signal teleport_requested_form_Coffeebrewer(position_Coffeebrewer: Vector2)#only can put in area2d
+signal teleport_requested_form_Coffeebrewer(position_Coffeebrewer: Vector2)#only can put in area2d+
 
 
 	

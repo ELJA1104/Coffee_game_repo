@@ -1,27 +1,27 @@
 [gd_scene format=3 uid="uid://o6bbeve4pbn1"]
 
-[ext_resource type="Script" uid="uid://7n05g2y7eyo3" path="res://coffe_bean.gd" id="1_0qsdu"]
-[ext_resource type="Script" uid="uid://5k5opq8fufkg" path="res://item(coffe_bean).gd" id="2_522xt"]
-[ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="3_4aape"]
+[ext_resource type="Script" uid="uid://7n05g2y7eyo3" path="res://Code/coffe_bean.gd" id="1_fnwee"]
+[ext_resource type="Script" uid="uid://5k5opq8fufkg" path="res://Code/item(coffe_bean).gd" id="2_21icw"]
+[ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="3_cwjfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cki6i"]
 size = Vector2(77, 68)
 
 [node name="coffe bean" type="Node2D" unique_id=204909395]
-script = ExtResource("1_0qsdu")
+script = ExtResource("1_fnwee")
 
 [node name="item(coffe bean)" type="CharacterBody2D" parent="." unique_id=210815455]
-script = ExtResource("2_522xt")
+script = ExtResource("2_21icw")
 
 [node name="Sprite2D" type="Sprite2D" parent="item(coffe bean)" unique_id=1681547180]
 position = Vector2(-17, -11.999985)
 scale = Vector2(0.296875, 0.265625)
-texture = ExtResource("3_4aape")
+texture = ExtResource("3_cwjfi")
 
 [node name="Sprite2D2" type="Sprite2D" parent="item(coffe bean)" unique_id=1079738799]
 position = Vector2(19.679688, 19.24219)
 scale = Vector2(0.2862549, 0.27746585)
-texture = ExtResource("3_4aape")
+texture = ExtResource("3_cwjfi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="item(coffe bean)" unique_id=1576500716]
 position = Vector2(1.5, 4)
