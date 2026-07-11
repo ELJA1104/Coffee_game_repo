@@ -1,0 +1,3 @@
+extends CharacterBody2D
+
+var coffee_grinder=global_position
