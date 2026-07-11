@@ -5,3 +5,6 @@ func hide_cup():
 	
 func show_cup():
 	get_node('item(cup)').visible = true
+
+func tp_cup():
+	get_node('').global_position
