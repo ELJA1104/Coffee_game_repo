@@ -13,3 +13,11 @@ func _on_button_pressed() -> void:
 	times += 1
 	if times > runtime:
 		label.text = "time pressed = 10"
+
+
+
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
