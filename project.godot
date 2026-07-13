@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Coffee Game"
+run/main_scene="uid://bd267dnu2okq3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,5 +1,6 @@
 extends Node2D
 
+var coffee_entered :bool = false
 @onready var label :Label =$Label
 @onready var button:Button = $Button
 @onready var times :int = 1
@@ -11,13 +12,16 @@ func _process(_delta: float) -> void:
 func _on_button_pressed() -> void:
 	label.text = "time pressed ="+str(times)
 	times += 1
-	if times > runtime:
-		label.text = "time pressed = 10"
-
-
-
-
+	if coffee_entered:
+		if times > runtime:
+			pass
+	else:
+		if  times > runtime:
+			label.text = "Max"
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group("coffe bean"):
+		coffee_entered = true
+	else :
+		coffee_entered = false
