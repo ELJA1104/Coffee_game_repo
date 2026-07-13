@@ -5,6 +5,8 @@ var coffee_entered :bool = false
 @onready var button:Button = $Button
 @onready var times :int = 1
 @onready var runtime :int = 10
+@onready var cup :Node2D = $cup
+signal tp_cup
 
 func _process(_delta: float) -> void:
 	button.pressed.connect(_on_button_pressed)
@@ -14,7 +16,8 @@ func _on_button_pressed() -> void:
 	times += 1
 	if coffee_entered:
 		if times > runtime:
-			pass
+			tp_cup.emit()
+			tp_cup.connect(cup.teleport_cup_to_grinder) 
 	else:
 		if  times > runtime:
 			label.text = "Max"
