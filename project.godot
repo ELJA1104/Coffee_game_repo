@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Coffee Game"
+<<<<<<< HEAD
 run/main_scene="uid://bd267dnu2okq3"
 config/features=PackedStringArray("4.6", "Forward Plus")
+=======
+run/main_scene="uid://b1hub4lvnhwtb"
+config/features=PackedStringArray("4.7", "Forward Plus")
+>>>>>>> 0e599ac2a98389b97d63370bf5cdfabcf57fd0fd
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamconfig/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
 

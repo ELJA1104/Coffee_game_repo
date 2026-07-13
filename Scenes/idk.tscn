@@ -2,39 +2,50 @@
 
 [ext_resource type="Script" uid="uid://xyxv1ja1w67t" path="res://Code/idk.gd" id="1_ngukw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngukw"]
+size = Vector2(81, 45)
+
 [node name="Grinder" type="Node2D" unique_id=985036243]
+position = Vector2(361, 265)
 script = ExtResource("1_ngukw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=859383585]
+position = Vector2(-2, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=705494650]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ngukw")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=94998954]
-offset_left = 157.0
-offset_top = 152.0
-offset_right = 238.0
-offset_bottom = 197.0
+offset_left = -42.0
+offset_top = 41.0
+offset_right = 39.0
+offset_bottom = 86.0
 color = Color(0.22352941, 1, 1, 0.57254905)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1052423120]
-offset_left = 157.0
-offset_top = 46.0
-offset_right = 238.0
-offset_bottom = 152.0
+offset_left = -42.0
+offset_top = -65.0
+offset_right = 39.0
+offset_bottom = 41.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=2138712474]
-offset_left = 168.0
-offset_top = 12.0
-offset_right = 208.0
-offset_bottom = 35.0
+offset_left = -31.0
+offset_top = -99.0
+offset_right = 9.0
+offset_bottom = -76.0
 text = "."
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=1075357503]
-offset_left = 174.0
-offset_top = 76.0
-offset_right = 224.0
-offset_bottom = 130.0
+offset_left = -25.0
+offset_top = -35.0
+offset_right = 25.0
+offset_bottom = 19.0
 text = "Press
 Me"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
