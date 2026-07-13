@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://h7pxhonnsun3"]
+[gd_scene format=3 uid="uid://cgqjx1k2rpcd4"]
 
-[ext_resource type="Script" path="res://cup.gd" id="1_358bg"]
-[ext_resource type="Script" path="res://item(cup).gd" id="2_q1s7v"]
+[ext_resource type="Script" uid="uid://dtqojehmqwacy" path="res://cup.gd" id="1_358bg"]
+[ext_resource type="Script" uid="uid://dvlf1snrhin1g" path="res://item(cup).gd" id="2_q1s7v"]
 [ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="3_vfhm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6vj4"]

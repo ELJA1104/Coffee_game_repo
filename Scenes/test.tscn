@@ -6,15 +6,25 @@
 size = Vector2(168, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(168, 56)
+size = Vector2(168, 48)
 
-[node name="Coffeebrewer" type="Node2D" unique_id=204845374 node_paths=PackedStringArray("Pug_detec", "Cup_detec", "cup_tp_pos", "puck_tp_pos", "Progress_Bar")]
+[node name="Coffeebrewer" type="Node2D" unique_id=204845374]
 script = ExtResource("1_lc1oi")
-Pug_detec = NodePath("Puck detection")
-Cup_detec = NodePath("Cup detection")
-cup_tp_pos = NodePath("Cup detection/Cup_tp_destination")
-puck_tp_pos = NodePath("Puck detection/Puck_tp_destination")
-Progress_Bar = NodePath("ProgressBar")
+
+[node name="Control" type="Control" parent="." unique_id=639063775]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = -200.0
+offset_right = 192.0
+offset_bottom = -16.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1343897540]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 168.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=745951462]
 offset_left = -136.0
@@ -34,22 +44,16 @@ offset_top = -8.0
 offset_right = 120.0
 offset_bottom = 32.0
 
-[node name="Puck detection" type="Area2D" parent="." unique_id=854129398]
+[node name="Pug detection" type="Area2D" parent="." unique_id=854129398]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Puck detection" unique_id=1757694897]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pug detection" unique_id=1757694897]
 position = Vector2(-4, -184)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Puck_tp_destination" type="Node2D" parent="Puck detection" unique_id=1185130667]
-position = Vector2(0, -184)
-
 [node name="Cup detection" type="Area2D" parent="." unique_id=968435946]
 
-[node name="Cup_tp_destination" type="Node2D" parent="Cup detection" unique_id=2136124169]
-position = Vector2(0, -40)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cup detection" unique_id=1550581908]
-position = Vector2(-4, -36)
+position = Vector2(-4, -32)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Start" type="Button" parent="." unique_id=1102906672]
@@ -72,13 +76,7 @@ text = "Stop"
 position = Vector2(0, -64)
 zoom = Vector2(1.5, 1.5)
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1343897540]
-offset_left = -104.0
-offset_top = 48.0
-offset_right = 104.0
-offset_bottom = 75.0
-
-[connection signal="area_entered" from="Puck detection" to="." method="_on_pug_detection_area_entered"]
+[connection signal="area_entered" from="Pug detection" to="." method="_on_pug_detection_area_entered"]
 [connection signal="area_entered" from="Cup detection" to="." method="_on_cup_detection_area_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Stop" to="." method="_on_stop_button_pressed"]
