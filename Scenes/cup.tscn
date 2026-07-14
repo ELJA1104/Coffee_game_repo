@@ -11,6 +11,8 @@ size = Vector2(65, 50)
 script = ExtResource("1_labsj")
 
 [node name="item(cup)" type="CharacterBody2D" parent="." unique_id=969784243]
+disable_mode = 2
+input_pickable = true
 script = ExtResource("2_bu4t0")
 
 [node name="Sprite2D" type="Sprite2D" parent="item(cup)" unique_id=1439919093]

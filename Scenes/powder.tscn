@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://djb7m1vt7atnu"]
+
+[ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="1_dmm5t"]
+[ext_resource type="Script" uid="uid://cmrrcruykretw" path="res://Code/item(powder).gd" id="1_i23dk"]
+[ext_resource type="Script" uid="uid://bwn5ttss1h7r2" path="res://Code/powder.gd" id="1_uw8q3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se8w8"]
+size = Vector2(75, 75)
+
+[node name="powder" type="Node2D" unique_id=651418258]
+script = ExtResource("1_uw8q3")
+
+[node name="item(powder)" type="CharacterBody2D" parent="." unique_id=2074763096]
+disable_mode = 2
+input_pickable = true
+script = ExtResource("1_i23dk")
+
+[node name="Sprite2D" type="Sprite2D" parent="item(powder)" unique_id=1023222533]
+position = Vector2(29, 20)
+scale = Vector2(0.1875, 0.1796875)
+texture = ExtResource("1_dmm5t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="item(powder)" unique_id=245042066]
+position = Vector2(5, 20.5)
+scale = Vector2(0.1875, 0.1796875)
+texture = ExtResource("1_dmm5t")
+
+[node name="Sprite2D3" type="Sprite2D" parent="item(powder)" unique_id=484107930]
+position = Vector2(6, -22.5)
+scale = Vector2(0.1875, 0.1796875)
+texture = ExtResource("1_dmm5t")
+
+[node name="Sprite2D4" type="Sprite2D" parent="item(powder)" unique_id=748317329]
+position = Vector2(-6, -0.5)
+scale = Vector2(0.1875, 0.1796875)
+texture = ExtResource("1_dmm5t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="item(powder)" unique_id=539350327]
+position = Vector2(19, -1.5)
+scale = Vector2(0.1875, 0.1796875)
+texture = ExtResource("1_dmm5t")
+
+[node name="Sprite2D6" type="Sprite2D" parent="item(powder)" unique_id=1722176612]
+position = Vector2(-20, 20.5)
+scale = Vector2(0.1875, 0.1796875)
+texture = ExtResource("1_dmm5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item(powder)" unique_id=1985966909]
+position = Vector2(3, -1)
+shape = SubResource("RectangleShape2D_se8w8")

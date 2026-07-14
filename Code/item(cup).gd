@@ -1,7 +1,12 @@
 extends CharacterBody2D
 
 var when_is_grab_cup : bool = false
+var mouse_inside_cup : bool = false
 
+func _ready():
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	
 func _process(_delta):
 	if when_is_grab_cup:
 		var _mouse_pos = get_global_mouse_position()
@@ -10,10 +15,16 @@ func _process(_delta):
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
+		if event.pressed and mouse_inside_cup:
 			when_is_grab_cup = true
 		else:
 			when_is_grab_cup = false
+			
+func _on_mouse_entered():
+	mouse_inside_cup = true
+
+func _on_mouse_exited():
+	mouse_inside_cup = false
 #========================================================================================
 
 func teleport_cup_to_position_Grinder(position_Grinder: Vector2):

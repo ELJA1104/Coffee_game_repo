@@ -11,6 +11,8 @@ size = Vector2(77, 68)
 script = ExtResource("1_fnwee")
 
 [node name="item(coffe bean)" type="CharacterBody2D" parent="." unique_id=210815455]
+disable_mode = 2
+input_pickable = true
 script = ExtResource("2_21icw")
 
 [node name="Sprite2D" type="Sprite2D" parent="item(coffe bean)" unique_id=1681547180]
