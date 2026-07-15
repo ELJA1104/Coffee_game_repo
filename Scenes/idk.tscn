@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://bd267dnu2okq3"]
 
-[node name="Node2D" type="Node2D" unique_id=985036243]
+[ext_resource type="Script" uid="uid://xyxv1ja1w67t" path="res://Code/idk.gd" id="1_ngukw"]
+
+[node name="Grinder" type="Node2D" unique_id=985036243]
+script = ExtResource("1_ngukw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=859383585]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=705494650]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=94998954]
+offset_left = 157.0
+offset_top = 152.0
+offset_right = 238.0
+offset_bottom = 197.0
+color = Color(0.22352941, 1, 1, 0.57254905)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1052423120]
+offset_left = 157.0
+offset_top = 46.0
+offset_right = 238.0
+offset_bottom = 152.0
+
+[node name="Label" type="Label" parent="." unique_id=2138712474]
+offset_left = 168.0
+offset_top = 12.0
+offset_right = 208.0
+offset_bottom = 35.0
+text = "."
+
+[node name="Button" type="Button" parent="." unique_id=1075357503]
+offset_left = 174.0
+offset_top = 76.0
+offset_right = 224.0
+offset_bottom = 130.0
+text = "Press
+Me"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
