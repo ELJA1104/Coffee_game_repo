@@ -70,7 +70,7 @@ func 放ready():
 
 
 
-func _on_teleport_request(tp_coffe_bean, pos):
+'func _on_teleport_request(tp_coffe_bean, pos):
 	if tp_coffe_bean == "tp_to_coffe_bean":
 		global_position = pos
 
@@ -81,8 +81,8 @@ func _on_teleport_request(tp_coffe_bean, pos):
 	
 signal teleport_request(tp_coffe_bean: String, pos: Vector2)
 	
-func 放ready():
-	teleport_request.emit("tp_to_coffe_bean", global_position)
+func ready():
+	teleport_request.emit("tp_to_coffe_bean", global_position)'
 
 	
 	
