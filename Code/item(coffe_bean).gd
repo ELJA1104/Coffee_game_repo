@@ -28,6 +28,48 @@ func _on_mouse_exited():
 #========================================================================================
 
 
+func tp_coffe_bean(coffe_bean):
+	global_position = coffe_bean
+#=============================================================
+signal tp(coffe_bean: Vector2)
+
+func 放ready():
+	tp.emit(global_position)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 func _on_teleport_request(tp_coffe_bean, pos):
 	if tp_coffe_bean == "tp_to_coffe_bean":
 		global_position = pos

@@ -26,18 +26,13 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	mouse_inside_cup = false
 #========================================================================================
-func _on_teleport_request(tp_cup, pos):
-	if tp_cup == "tp_to_cup":
-		global_position = pos
 
 
 
+func tp_cup(cup):
+	global_position = cup
+#=============================================================
+signal tp(cup: Vector2)
 
-
-	
-signal teleport_request(tp_cup: String, pos: Vector2)
-	
 func 放ready():
-	teleport_request.emit("tp_to_cup", global_position)
-
-	
+	tp.emit(global_position)

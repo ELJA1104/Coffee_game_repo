@@ -26,16 +26,13 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	mouse_inside_powder = false
 #==========================================================================================
-func _on_teleport_request(tp_powder, pos):
-	if tp_powder == "tp_to_powder":
-		global_position = pos
 
 
 
+func tp_powder(powder):
+	global_position = powder
+#=============================================================
+signal tp(powder: Vector2)
 
-
-	
-signal teleport_request(tp_powder: String, pos: Vector2)
-	
 func 放ready():
-	teleport_request.emit("tp_to_powder", global_position)
+	tp.emit(global_position)
