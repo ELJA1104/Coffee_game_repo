@@ -8,13 +8,14 @@ size = Vector2(168, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(168, 56)
 
-[node name="Coffeebrewer" type="Node2D" unique_id=204845374 node_paths=PackedStringArray("Pug_detec", "Cup_detec", "cup_tp_pos", "puck_tp_pos", "Progress_Bar")]
+[node name="Coffeebrewer" type="Node2D" unique_id=204845374 node_paths=PackedStringArray("Pug_detec", "Cup_detec", "cup_tp_pos", "puck_tp_pos", "Progress_Bar", "Text_label")]
 script = ExtResource("1_lc1oi")
 Pug_detec = NodePath("Puck detection")
 Cup_detec = NodePath("Cup detection")
 cup_tp_pos = NodePath("Cup detection/Cup_tp_destination")
 puck_tp_pos = NodePath("Puck detection/Puck_tp_destination")
 Progress_Bar = NodePath("ProgressBar")
+Text_label = NodePath("Label")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=745951462]
 offset_left = -136.0
@@ -78,7 +79,17 @@ offset_top = 48.0
 offset_right = 104.0
 offset_bottom = 75.0
 
+[node name="Label" type="Label" parent="." unique_id=1508481027]
+offset_left = -128.0
+offset_top = 80.0
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="area_entered" from="Puck detection" to="." method="_on_pug_detection_area_entered"]
-[connection signal="area_entered" from="Cup detection" to="." method="_on_cup_detection_area_entered"]
+[connection signal="body_entered" from="Cup detection" to="." method="_on_cup_detection_body_entered"]
+[connection signal="body_exited" from="Cup detection" to="." method="_on_cup_detection_body_exited"]
 [connection signal="pressed" from="Start" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Stop" to="." method="_on_stop_button_pressed"]

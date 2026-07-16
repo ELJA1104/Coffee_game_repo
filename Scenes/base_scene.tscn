@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://qqpnfwanee66"]
+
+[ext_resource type="Script" uid="uid://b1sjymn2f51ur" path="res://Code/base_scene.gd" id="1_5yig4"]
+[ext_resource type="PackedScene" uid="uid://b1hub4lvnhwtb" path="res://Scenes/test.tscn" id="2_ff227"]
+[ext_resource type="PackedScene" uid="uid://cgqjx1k2rpcd4" path="res://Scenes/cup.tscn" id="3_6t8sk"]
+[ext_resource type="PackedScene" uid="uid://o6bbeve4pbn1" path="res://Scenes/coffe_bean.tscn" id="4_kvnw2"]
+
+[node name="Node2D" type="Node2D" unique_id=800427921]
+script = ExtResource("1_5yig4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1874151898]
+
+[node name="Coffeebrewer" parent="." unique_id=204845374 instance=ExtResource("2_ff227")]
+position = Vector2(-16, 70)
+
+[node name="cup" parent="." unique_id=1073076532 instance=ExtResource("3_6t8sk")]
+position = Vector2(-290, -21)
+
+[node name="coffe bean" parent="." unique_id=204909395 instance=ExtResource("4_kvnw2")]
+position = Vector2(-336, -191)
