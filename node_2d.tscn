@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c62c55x3krut7"]
+
+[ext_resource type="PackedScene" uid="uid://o6bbeve4pbn1" path="res://Scenes/coffe_bean.tscn" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://cgqjx1k2rpcd4" path="res://Scenes/cup.tscn" id="2_0hol4"]
+[ext_resource type="PackedScene" uid="uid://djb7m1vt7atnu" path="res://Scenes/powder.tscn" id="3_q6r6c"]
+
+[node name="Node2D" type="Node2D" unique_id=1030427442]
+
+[node name="coffe bean" parent="." unique_id=204909395 instance=ExtResource("1_epypp")]
+position = Vector2(313, 174)
+
+[node name="cup" parent="." unique_id=1073076532 instance=ExtResource("2_0hol4")]
+position = Vector2(629, 258)
+
+[node name="powder" parent="." unique_id=651418258 instance=ExtResource("3_q6r6c")]
+position = Vector2(130, 249)
