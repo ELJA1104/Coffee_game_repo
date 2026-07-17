@@ -7,16 +7,16 @@ var coffee_entered :bool = false
 @onready var runtime :int = 10
 @onready var label :Label = $Label
 
-func get_child_from_other_scene() -> void:
-	var cof = preload("res://Scenes/coffe_bean.tscn").institiate()
-	var cofb = cof.get_node(".")
-	cofb.add_to_group("b")
-	cof.add_to_group("b")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("b"):
+	if body.is_in_group("coffee bean"):
 		coffee_entered = true
-	else :
+	else:
+		coffee_entered = false
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("coffee bean"):
 		coffee_entered = false
 
 func _on_button_pressed() -> void:

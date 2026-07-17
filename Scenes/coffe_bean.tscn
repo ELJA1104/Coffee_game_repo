@@ -10,7 +10,7 @@ size = Vector2(77, 68)
 [node name="coffe bean" type="Node2D" unique_id=204909395]
 script = ExtResource("1_fnwee")
 
-[node name="item(coffe bean)" type="CharacterBody2D" parent="." unique_id=210815455]
+[node name="item(coffe bean)" type="CharacterBody2D" parent="." unique_id=210815455 groups=["coffee bean"]]
 disable_mode = 2
 input_pickable = true
 script = ExtResource("2_21icw")
