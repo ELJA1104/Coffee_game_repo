@@ -13,6 +13,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		coffee_entered = true
 	else:
 		coffee_entered = false
+	Signalbus.eltp.emit()
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
@@ -24,6 +25,7 @@ func _on_button_pressed() -> void:
 	times += 1
 	if coffee_entered:
 		if times > runtime:
+			Signalbus.eltp.emit()
 			label.text = "Congrat" 
 	else:
 		if  times > runtime:
