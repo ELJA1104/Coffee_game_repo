@@ -38,7 +38,7 @@ func _on_mouse_exited():
 	
 
 var cup_pos = self.global_position
-func tp():
+#func tp():
 	
 
 

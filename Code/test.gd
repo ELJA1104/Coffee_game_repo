@@ -51,6 +51,7 @@ func _on_cup_detection_body_exited(body: Node2D) -> void:
 	Cup_detection_value = 0
 	print(Cup_detection_value)
 	text_to_be_displayed("Cup has been taken away")
+	is_filling = false
 	
 func displaying_text():
 	Text_label.visible_characters= 0
