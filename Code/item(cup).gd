@@ -34,7 +34,7 @@ func cup_fill():
 	
 	
 func cup_stop_fill():
-	ProgressBar.value += 0
+	ProgressBar.value = ProgressBar.value
 	
 func cup_return_to_zero():
 	ProgressBar.visible = false
