@@ -32,7 +32,10 @@ func _on_mouse_exited():
 func tp_powder(powder):
 	global_position = powder
 #=============================================================
-signal tp(powder: Vector2)
+signal powder(global_position: Vector2)
 
 func 放ready():
-	tp.emit(global_position)
+	powder.emit(global_position)
+	
+	
+	
