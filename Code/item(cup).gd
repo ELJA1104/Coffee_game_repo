@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
-
+@export var Progress_Bar_cup : ProgressBar
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
@@ -29,16 +29,16 @@ func _on_mouse_exited():
 #========================================================================================
 
 func cup_fill():
-	ProgressBar.visible = true
-	ProgressBar.value += 1.5
+	Progress_Bar_cup.visible = true
+	Progress_Bar_cup.value += 0.5
 	
 	
 func cup_stop_fill():
-	ProgressBar.value = ProgressBar.value
+	Progress_Bar_cup.value += 0
 	
 func cup_return_to_zero():
-	ProgressBar.visible = false
-	ProgressBar.value = 0
+	Progress_Bar_cup.visible = false
+	Progress_Bar_cup.value = 0
 	
 
 #=========================================================================================

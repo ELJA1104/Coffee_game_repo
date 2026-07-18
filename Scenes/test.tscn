@@ -8,13 +8,12 @@ size = Vector2(168, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(168, 56)
 
-[node name="Coffeebrewer" type="Node2D" unique_id=204845374 node_paths=PackedStringArray("Pug_detec", "Cup_detec", "cup_tp_pos", "puck_tp_pos", "Progress_Bar", "Text_label")]
+[node name="Coffeebrewer" type="Node2D" unique_id=204845374 node_paths=PackedStringArray("Pug_detec", "Cup_detec", "cup_tp_pos", "puck_tp_pos", "Text_label")]
 script = ExtResource("1_lc1oi")
 Pug_detec = NodePath("Puck detection")
 Cup_detec = NodePath("Cup detection")
 cup_tp_pos = NodePath("Cup detection/Cup_tp_destination")
 puck_tp_pos = NodePath("Puck detection/Puck_tp_destination")
-Progress_Bar = NodePath("ProgressBar")
 Text_label = NodePath("Label")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=745951462]
@@ -72,12 +71,6 @@ text = "Stop"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1362637732]
 position = Vector2(0, -64)
 zoom = Vector2(1.5, 1.5)
-
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1343897540]
-offset_left = -104.0
-offset_top = 48.0
-offset_right = 104.0
-offset_bottom = 75.0
 
 [node name="Label" type="Label" parent="." unique_id=1508481027]
 offset_left = -128.0

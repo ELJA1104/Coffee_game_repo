@@ -4,7 +4,6 @@ extends Node2D
 @export var Cup_detection_value : int = 0
 @export var cup_tp_pos: Node2D
 @export var puck_tp_pos: Node2D
-@export var Progress_Bar : ProgressBar
 @export var Text_label : Label
 var B : String
 var is_filling : bool = false
@@ -12,17 +11,21 @@ func get_input():
 	pass
 
 func _physics_process(delta: float) -> void:
-	if is_filling == true:
-		Progress_Bar.value += .15
-				
-	elif is_filling == false:
-		Progress_Bar.value = Progress_Bar.value
-	
+	if cup:
+		if is_filling == true:
+			cup.cup_fill()
+			
+		elif is_filling == false:
+			cup.cup_stop_fill()
+			
+		#elif cup.Progress_Bar.value == 100:
+			#text_to_be_displayed("Cup has finished filling")
+			
 func _on_start_button_pressed() -> void:
 	if Cup_detection_value == 1:
 		print("start button is pressed")
 		is_filling = true
-		print(Progress_Bar.value)
+		
 		text_to_be_displayed("Filling process has started")
 	elif Cup_detection_value== 0:
 		print("something is missing!")
@@ -32,11 +35,12 @@ func _on_stop_button_pressed() -> void:
 	print("stop button is pressed")
 	Cup_detection_value == 0
 	is_filling = false
-	print(Progress_Bar.value)
+
 	text_to_be_displayed("Filling process has stopped")
 	
-
+var cup
 func _on_cup_detection_body_entered(body: Node2D) -> void:
+	cup = body
 	print("Cup has been detected")
 	Cup_detection_value = 1
 	print(Cup_detection_value)
@@ -57,3 +61,7 @@ func displaying_text():
 func text_to_be_displayed(text : String):
 	Text_label.text = text
 	displaying_text()
+
+
+func _on_cup_tp_button_pressed() -> void:
+	pass

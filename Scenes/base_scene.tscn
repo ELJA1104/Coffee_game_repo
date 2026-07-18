@@ -22,3 +22,15 @@ position = Vector2(303, 13)
 
 [node name="coffe bean" parent="." unique_id=204909395 instance=ExtResource("4_kvnw2")]
 position = Vector2(-336, -191)
+
+[node name="cup2" parent="." unique_id=853353238 instance=ExtResource("3_6t8sk")]
+position = Vector2(-308, 208)
+
+[node name="cup3" parent="." unique_id=807765876 instance=ExtResource("3_6t8sk")]
+position = Vector2(-471, 131)
+
+[node name="cup4" parent="." unique_id=1304330260 instance=ExtResource("3_6t8sk")]
+position = Vector2(-447, 0)
+
+[node name="cup5" parent="." unique_id=1524834150 instance=ExtResource("3_6t8sk")]
+position = Vector2(-410, 238)
