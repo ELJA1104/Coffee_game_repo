@@ -37,5 +37,5 @@ signal powder(global_position: Vector2)
 func 放ready():
 	powder.emit(global_position)
 	
-	
+powder.tp_powder()
 	

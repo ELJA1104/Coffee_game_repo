@@ -50,7 +50,7 @@ signal cup(global_position: Vector2)
 func 放ready():
 	cup.emit(global_position)
 	
-
+cup.tp_cup()
 	
 	
 	
