@@ -25,6 +25,6 @@ position = Vector2(19.679688, 19.24219)
 scale = Vector2(0.2862549, 0.27746585)
 texture = ExtResource("3_cwjfi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="item(coffe bean)" unique_id=1576500716]
+[node name="draw" type="CollisionShape2D" parent="item(coffe bean)" unique_id=1576500716]
 position = Vector2(1.5, 4)
 shape = SubResource("RectangleShape2D_cki6i")

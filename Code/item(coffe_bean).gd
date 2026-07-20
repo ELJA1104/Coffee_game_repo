@@ -28,15 +28,15 @@ func _on_mouse_exited():
 #========================================================================================
 
 
-func tp_coffe_bean(coffe_bean):
-	global_position = coffe_bean
+func tp_tcoffe_bean(tcoffe_bean):
+	global_position = tcoffe_bean
 #=============================================================
-signal coffe_bean(global_position: Vector2)
+#signal tcoffe_bean(global_position: Vector2)
 
-func 放ready():
-	coffe_bean.emit(global_position)
+#func 放ready():
+	#tcoffe_bean.emit(global_position)
 	
-coffe_bean.tp_powder()
+#coffe_bean.tp_tcoffe_bean()
 	
 
 

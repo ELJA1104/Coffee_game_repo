@@ -1,12 +1,13 @@
 extends CharacterBody2D
-
 var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
 @export var Progress_Bar_cup : ProgressBar
+@export var cup : Node2D
+
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
-	
+
 func _process(_delta):
 	if when_is_grab_cup:
 		var _mouse_pos = get_global_mouse_position()
@@ -29,28 +30,32 @@ func _on_mouse_exited():
 #========================================================================================
 
 func cup_fill():
-	Progress_Bar_cup.visible = true
+	Progress_Bar_cup.show()
 	Progress_Bar_cup.value += 0.5
-	
+	pass
 	
 func cup_stop_fill():
+	Progress_Bar_cup.hide()
 	Progress_Bar_cup.value += 0
+	pass
 	
 func cup_return_to_zero():
-	Progress_Bar_cup.visible = false
+	Progress_Bar_cup.hide()
 	Progress_Bar_cup.value = 0
-	
-
+	pass
 #=========================================================================================
-func tp_cup(cup):
-	global_position = cup
-#=============================================================
-signal cup(global_position: Vector2)
+func tp_tcup(tcup):
+	global_position = tcup
+#========================================================
 
-func 放ready():
-	cup.emit(global_position)
+#=============================================================
+
+#signal tcup(global_position: Vector2)
+
+#func 放ready():
+	#tcup.emit(global_position)
 	
-cup.tp_cup()
+#cup.tp_tcup()
 	
 	
 	

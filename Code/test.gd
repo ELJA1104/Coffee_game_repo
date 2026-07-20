@@ -31,6 +31,7 @@ func _on_start_button_pressed() -> void:
 		print("something is missing!")
 		text_to_be_displayed("Cup has not been detected")
 
+
 func _on_stop_button_pressed() -> void:
 	print("stop button is pressed")
 	Cup_detection_value == 0

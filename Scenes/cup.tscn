@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6vj4"]
 size = Vector2(65, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m13f"]
+size = Vector2(42, 50)
+
 [node name="cup" type="Node2D" unique_id=1073076532]
 script = ExtResource("1_labsj")
 
@@ -14,7 +17,7 @@ script = ExtResource("1_labsj")
 disable_mode = 2
 input_pickable = true
 script = ExtResource("2_bu4t0")
-Progress_Bar_cup = NodePath("ProgressBar")
+Progress_Bar_cup = NodePath("../imput other")
 
 [node name="Sprite2D" type="Sprite2D" parent="item(cup)" unique_id=1439919093]
 position = Vector2(-8.624993, 4)
@@ -36,12 +39,29 @@ position = Vector2(25.624998, 5)
 scale = Vector2(0.09960939, 0.3749998)
 texture = ExtResource("3_ewh7x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="item(cup)" unique_id=2105860307]
+[node name="draw" type="CollisionShape2D" parent="item(cup)" unique_id=2105860307]
 position = Vector2(3.5, 5)
 shape = SubResource("RectangleShape2D_e6vj4")
 
-[node name="ProgressBar" type="ProgressBar" parent="item(cup)" unique_id=514692943]
+[node name="imput other" type="ProgressBar" parent="." unique_id=514692943]
 offset_left = -104.0
 offset_top = -72.0
 offset_right = 111.0
 offset_bottom = -45.0
+
+[node name="Label" type="Label" parent="." unique_id=1875132697]
+offset_left = -104.0
+offset_top = -45.0
+offset_right = 111.0
+offset_bottom = -22.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1773577479]
+collision_layer = 16
+collision_mask = 16
+
+[node name="add ice" type="CollisionShape2D" parent="Area2D" unique_id=1868099688]
+light_mask = 16
+visibility_layer = 16
+position = Vector2(-9, 4)
+shape = SubResource("RectangleShape2D_2m13f")
+debug_color = Color(0.6763681, 0.5055194, 0.05922377, 0.41960785)

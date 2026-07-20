@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bp0pcatmwiqoy"]
+
+[ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="1_fse5i"]
+[ext_resource type="Script" uid="uid://crv7mtw1fw507" path="res://Code/ice.gd" id="1_g02c5"]
+[ext_resource type="Script" uid="uid://bgttcdxvvfxdm" path="res://Code/item(ice).gd" id="2_g02c5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m13f"]
+size = Vector2(136, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0v5d"]
+size = Vector2(148, 124)
+
+[node name="ice" type="Node2D" unique_id=1647408933]
+script = ExtResource("1_g02c5")
+
+[node name="item(ice)" type="CharacterBody2D" parent="." unique_id=65270872]
+disable_mode = 2
+input_pickable = true
+script = ExtResource("2_g02c5")
+
+[node name="Sprite2D" type="Sprite2D" parent="item(ice)" unique_id=438094056]
+position = Vector2(-1, 1)
+texture = ExtResource("1_fse5i")
+
+[node name="draw" type="CollisionShape2D" parent="item(ice)" unique_id=1039411837]
+position = Vector2(-3, 1)
+shape = SubResource("RectangleShape2D_2m13f")
+
+[node name="add in cup" type="CollisionShape2D" parent="item(ice)" unique_id=195290502]
+light_mask = 16
+visibility_layer = 16
+position = Vector2(-2, -2)
+shape = SubResource("RectangleShape2D_t0v5d")
+debug_color = Color(0.65493196, 0.5147081, 0.15409875, 0.41960785)
