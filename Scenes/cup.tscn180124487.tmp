@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cgqjx1k2rpcd4"]
+
+[ext_resource type="Script" uid="uid://dtqojehmqwacy" path="res://Code/cup.gd" id="1_labsj"]
+[ext_resource type="Script" uid="uid://dvlf1snrhin1g" path="res://Code/item(cup).gd" id="2_bu4t0"]
+[ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="3_ewh7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6vj4"]
+size = Vector2(65, 50)
+
+[node name="cup" type="Node2D" unique_id=1073076532 groups=["coffee bean"]]
+script = ExtResource("1_labsj")
+
+[node name="item(cup)" type="CharacterBody2D" parent="." unique_id=969784243 node_paths=PackedStringArray("Progress_Bar_cup")]
+disable_mode = 2
+input_pickable = true
+script = ExtResource("2_bu4t0")
+Progress_Bar_cup = NodePath("ProgressBar")
+
+[node name="Sprite2D" type="Sprite2D" parent="item(cup)" unique_id=1439919093]
+position = Vector2(-8.624993, 4)
+scale = Vector2(0.28710946, 0.3749998)
+texture = ExtResource("3_ewh7x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="item(cup)" unique_id=373315810]
+position = Vector2(15.312498, -14.000004)
+scale = Vector2(0.26074225, 0.10937507)
+texture = ExtResource("3_ewh7x")
+
+[node name="Sprite2D3" type="Sprite2D" parent="item(cup)" unique_id=1260352294]
+position = Vector2(15.82443, 21.000002)
+scale = Vector2(0.25274324, 0.08319093)
+texture = ExtResource("3_ewh7x")
+
+[node name="Sprite2D4" type="Sprite2D" parent="item(cup)" unique_id=1864642641]
+position = Vector2(25.624998, 5)
+scale = Vector2(0.09960939, 0.3749998)
+texture = ExtResource("3_ewh7x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item(cup)" unique_id=2105860307]
+position = Vector2(3.5, 5)
+shape = SubResource("RectangleShape2D_e6vj4")
+
+[node name="ProgressBar" type="ProgressBar" parent="item(cup)" unique_id=514692943]
+offset_left = -104.0
+offset_top = -72.0
+offset_right = 111.0
+offset_bottom = -45.0
