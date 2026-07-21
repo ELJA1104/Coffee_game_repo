@@ -65,5 +65,10 @@ func text_to_be_displayed(text : String):
 	displaying_text()
 
 
-func _on_cup_tp_button_pressed() -> void:
-	pass
+
+func _on_puck_detection_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_puck_detection_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

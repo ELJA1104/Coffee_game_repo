@@ -1,7 +1,5 @@
 extends Node2D
-@export var ice : CharacterBody2D
 @export var Text_label : Label
-@export var Progress_Bar_cup : ProgressBar
 @export var Area_2D : Area2D
 
 func _ready():
@@ -27,22 +25,5 @@ func textc(text : String):
 	displaying_text()
 
 
-
-
-func add_ice():
-	print("lkkjgjgidhs")
-	Progress_Bar_cup.show()
-	Progress_Bar_cup.value += randf_range(5.0, 10.0)
-	textc("The ice is filling")
-	if Progress_Bar_cup.value >= Progress_Bar_cup.max_value:
-		stop_add_ice()
-		pass
-		
-func stop_add_ice():
-	Progress_Bar_cup.hide()
-	textc("The ice is full")
-	pass
-
-
 func _on_area_2d_body_entered(body):
-	add_ice()
+	pass
