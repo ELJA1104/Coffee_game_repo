@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cty03jb2sdxnc"]
+
+[ext_resource type="Script" uid="uid://cgig0fd1i5xe5" path="res://node_2d.gd" id="1_7w7w6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fwwm"]
+size = Vector2(147, 35)
+
+[node name="Ethan\'s Puck" type="CharacterBody2D" unique_id=1396477318 node_paths=PackedStringArray("btn", "Text_label")]
+script = ExtResource("1_7w7w6")
+btn = NodePath("Button")
+Text_label = NodePath("Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471368098]
+position = Vector2(20.5, -11.5)
+shape = SubResource("RectangleShape2D_5fwwm")
+
+[node name="Button" type="Button" parent="." unique_id=1674592438]
+offset_left = -56.0
+offset_top = -32.0
+offset_right = 96.0
+offset_bottom = 8.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=714926763]
+offset_left = -56.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0.34158427, 0.34158427, 0.3415842, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=926858536]
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 96.0
+offset_bottom = -16.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1565645880]
+offset_left = -56.0
+offset_top = 8.0
+offset_right = 96.0
+offset_bottom = 31.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

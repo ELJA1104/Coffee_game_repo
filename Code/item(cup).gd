@@ -24,11 +24,9 @@ func _input(event: InputEvent) -> void:
 			
 func _on_mouse_entered():
 	mouse_inside_cup = true
-	print("buh")
 
 func _on_mouse_exited():
 	mouse_inside_cup = false
-	print("bye")
 #========================================================================================
 
 func cup_fill():
