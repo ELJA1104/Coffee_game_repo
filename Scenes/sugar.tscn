@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ci7c6riru6aal"]
 
 [ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="1_pfnow"]
-[ext_resource type="Script" uid="uid://35a6amt3kl4r" path="res://sugar.gd" id="1_xng1b"]
-[ext_resource type="Script" uid="uid://ilxuxpqrng1k" path="res://item(sugar).gd" id="2_wljrl"]
+[ext_resource type="Script" uid="uid://35a6amt3kl4r" path="res://Code/sugar.gd" id="1_xng1b"]
+[ext_resource type="Script" uid="uid://ilxuxpqrng1k" path="res://Code/item(sugar).gd" id="2_wljrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m13f"]
 size = Vector2(131, 125)
