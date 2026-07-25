@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		elif is_filling == false:
 			cup.cup_stop_fill()
 			
-		if cup.Progress_Bar_cup.value == 100:
+		if cup.Progress_Bar_cup.value >= 99:
 			is_full = true
 			
 	if is_full == true:
@@ -58,7 +58,7 @@ func _on_cup_detection_body_entered(body) -> void:
 		text_to_be_displayed("Cup has been detected")
 	elif body is Ethan_Puck:
 		cup = null
-		print("Bodoh, fuck are you tryna do?")
+		text_to_be_displayed("This is for the cup, not the puck")
 	
 func _on_cup_detection_body_exited(body) -> void:
 	print(body)
@@ -70,7 +70,8 @@ func _on_cup_detection_body_exited(body) -> void:
 		text_to_be_displayed("Cup has been taken away")
 		is_filling = false
 		is_full = false
-	
+	else:
+		pass
 func displaying_text():
 	Text_label.visible_characters= 0
 	for i in Text_label.text.length():
@@ -83,19 +84,17 @@ func text_to_be_displayed(text : String):
 
 func _on_puck_detection_body_entered(body: CharacterBody2D) -> void:
 	print(body)
-	if body == Ethan_Puck:
+	if body is Ethan_Puck:
 		coffee_flavour = body.flavour
 		Puck_detec = true
 		text_to_be_displayed("Puck has been detected")
 		await get_tree().create_timer(2).timeout
 		text_to_be_displayed("Coffee flavour is " + coffee_flavour)
 	else:
-		print("Bodoh, fuck are you trying to do?")
+		text_to_be_displayed("This is for the puck, not the cup")
 	
 func _on_puck_detection_body_exited(body: CharacterBody2D) -> void:
 	print(body)
 	if body is Ethan_Puck:
 		Puck_detec = false
 		text_to_be_displayed("Puck has been taken away")
-	else:
-		print("Bodoh, fuck are you trying to do?")

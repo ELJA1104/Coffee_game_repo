@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Cup_node
 var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
 @export var Progress_Bar_cup : ProgressBar

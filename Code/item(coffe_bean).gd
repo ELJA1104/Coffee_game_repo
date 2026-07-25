@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Cup_node
+
 var when_is_grab_coffe_bean : bool = false
 var mouse_inside_coffe_bean : bool = false
 
