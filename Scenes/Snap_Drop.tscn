@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5tmwxp7usmip"]
 
-[ext_resource type="Script" uid="uid://fu37cocy8125" path="res://Code/texture_rect.gd" id="1_j2nex"]
+[ext_resource type="Script" uid="uid://mmnjlscfx3q" path="res://Code/Snap_Drop.gd" id="1_j2nex"]
 
 [node name="TextureRect" type="TextureRect" unique_id=2105819943]
 offset_right = 128.0
