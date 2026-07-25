@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2g00wkd80yi5"]
+
+[ext_resource type="Script" uid="uid://baiwcyslkoff5" path="res://slot.gd" id="1_c24ra"]
+
+[node name="slot" type="PanelContainer" unique_id=3250987]
+anchors_preset = -1
+anchor_right = 0.117000006
+anchor_bottom = 0.208
+offset_right = 0.21598816
+offset_bottom = 0.21600342
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c24ra")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1013967738]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+expand_mode = 1

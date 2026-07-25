@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://2vi38ulmkkyy"]
+
+[ext_resource type="PackedScene" uid="uid://2g00wkd80yi5" path="res://slot.tscn" id="1_uhqqe"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uhqqe"]
+
+[node name="TestScene" type="Node2D" unique_id=442518776]
+
+[node name="ui" type="Control" parent="." unique_id=1348248480]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" type="GridContainer" parent="ui" unique_id=1654008929]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 378.0
+offset_right = 979.0
+offset_bottom = 522.0
+columns = 4
+
+[node name="slot2" parent="ui/Inventory" unique_id=1254714370 instance=ExtResource("1_uhqqe")]
+layout_mode = 2
+
+[node name="TextureRect" parent="ui/Inventory/slot2" index="0" unique_id=1013967738]
+texture = SubResource("NoiseTexture2D_uhqqe")
+
+[node name="slot3" parent="ui/Inventory" unique_id=476703747 instance=ExtResource("1_uhqqe")]
+layout_mode = 2
+
+[node name="slot4" parent="ui/Inventory" unique_id=1913566992 instance=ExtResource("1_uhqqe")]
+layout_mode = 2
+
+[node name="slot7" parent="ui/Inventory" unique_id=672546783 instance=ExtResource("1_uhqqe")]
+layout_mode = 2
+
+[editable path="ui/Inventory/slot2"]
