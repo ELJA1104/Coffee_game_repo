@@ -10,11 +10,10 @@ size = Vector2(65, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m13f"]
 size = Vector2(42, 50)
 
-[node name="cup" type="Node2D" unique_id=1073076532 node_paths=PackedStringArray("Text_label", "Progress_Bar_cup", "Area_2D")]
+[node name="cup" type="Node2D" unique_id=1073076532 node_paths=PackedStringArray("Text_label", "Progress_Bar_cup")]
 script = ExtResource("1_labsj")
-Text_label = NodePath("item(cup)/Label")
+Text_label = NodePath("")
 Progress_Bar_cup = NodePath("item(cup)/imput other")
-Area_2D = NodePath("item(cup)/Area2D")
 
 [node name="item(cup)" type="CharacterBody2D" parent="." unique_id=969784243 node_paths=PackedStringArray("Progress_Bar_cup")]
 disable_mode = 2
@@ -52,19 +51,13 @@ offset_top = -72.0
 offset_right = 111.0
 offset_bottom = -45.0
 
-[node name="Label" type="Label" parent="item(cup)" unique_id=1875132697]
-offset_left = -104.0
-offset_top = -45.0
-offset_right = 111.0
-offset_bottom = -22.0
-
 [node name="Area2D" type="Area2D" parent="item(cup)" unique_id=1773577479]
-collision_layer = 16
-collision_mask = 16
+collision_layer = 112
+collision_mask = 112
 
-[node name="add ice" type="CollisionShape2D" parent="item(cup)/Area2D" unique_id=1868099688]
-light_mask = 16
-visibility_layer = 16
+[node name="add things" type="CollisionShape2D" parent="item(cup)/Area2D" unique_id=1868099688]
+light_mask = 112
+visibility_layer = 112
 position = Vector2(-9, 4)
 shape = SubResource("RectangleShape2D_2m13f")
 debug_color = Color(0.6763681, 0.5055194, 0.05922377, 0.41960785)

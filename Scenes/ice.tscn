@@ -26,9 +26,11 @@ texture = ExtResource("1_fse5i")
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_2m13f")
 
-[node name="add in cup" type="CollisionShape2D" parent="item(ice)" unique_id=195290502]
+[node name="Area2D" type="Area2D" parent="item(ice)" unique_id=541080348]
+position = Vector2(-2, -2)
+
+[node name="add in cup" type="CollisionShape2D" parent="item(ice)/Area2D" unique_id=195290502]
 light_mask = 16
 visibility_layer = 16
-position = Vector2(-2, -2)
 shape = SubResource("RectangleShape2D_t0v5d")
 debug_color = Color(0.65493196, 0.5147081, 0.15409875, 0.41960785)
