@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bn6ls7dv1r2ys"]
+
+[ext_resource type="PackedScene" uid="uid://b5tmwxp7usmip" path="res://Scenes/Snap_Drop.tscn" id="1_r1oje"]
+[ext_resource type="Texture2D" uid="uid://or66im7dlwtu" path="res://icon.svg" id="2_oot80"]
+
+[node name="Node2D" type="Node2D" unique_id=1889194625]
+
+[node name="TextureRect" parent="." unique_id=2105819943 instance=ExtResource("1_r1oje")]
+offset_left = 72.0
+offset_top = 64.0
+offset_right = 200.0
+offset_bottom = 192.0
+texture = ExtResource("2_oot80")
+
+[node name="TextureRect2" parent="." unique_id=1741774019 instance=ExtResource("1_r1oje")]
+offset_left = 512.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 192.0
+
+[node name="TextureRect3" parent="." unique_id=778952868 instance=ExtResource("1_r1oje")]
+offset_left = 568.0
+offset_top = -88.0
+offset_right = 696.0
+offset_bottom = 40.0
+
+[node name="TextureRect4" parent="." unique_id=1777244264 instance=ExtResource("1_r1oje")]
+offset_left = 40.0
+offset_top = 272.0
+offset_right = 168.0
+offset_bottom = 400.0
+
+[node name="TextureRect6" parent="." unique_id=835403788 instance=ExtResource("1_r1oje")]
+offset_left = 712.0
+offset_top = 112.0
+offset_right = 840.0
+offset_bottom = 240.0
+
+[node name="TextureRect7" parent="." unique_id=1305658014 instance=ExtResource("1_r1oje")]
+offset_left = 560.0
+offset_top = 232.0
+offset_right = 688.0
+offset_bottom = 360.0
+
+[node name="TextureRect8" parent="." unique_id=760186250 instance=ExtResource("1_r1oje")]
+offset_left = 104.0
+offset_top = -128.0
+offset_right = 232.0
+offset_bottom = 0.0
+
+[node name="TextureRect9" parent="." unique_id=881529179 instance=ExtResource("1_r1oje")]
+offset_left = 288.0
+offset_top = -40.0
+offset_right = 416.0
+offset_bottom = 88.0
+
+[node name="TextureRect10" parent="." unique_id=261344660 instance=ExtResource("1_r1oje")]
+offset_left = 312.0
+offset_top = 200.0
+offset_right = 440.0
+offset_bottom = 328.0

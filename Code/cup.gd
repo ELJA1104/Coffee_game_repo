@@ -1,4 +1,5 @@
 extends Node2D
+
 @export var ice : CharacterBody2D
 @export var Text_label : Label
 @export var Progress_Bar_cup : ProgressBar 

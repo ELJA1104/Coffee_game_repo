@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fwwm"]
 size = Vector2(147, 35)
 
-[node name="Ethan\'s Puck" type="CharacterBody2D" unique_id=1396477318 node_paths=PackedStringArray("btn", "Text_label")]
+[node name="Ethan\'s Puck" type="CharacterBody2D" unique_id=1459799583 node_paths=PackedStringArray("btn", "Text_label")]
 script = ExtResource("1_7w7w6")
 btn = NodePath("Button")
 Text_label = NodePath("Label")

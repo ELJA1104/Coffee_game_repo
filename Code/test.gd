@@ -48,21 +48,28 @@ func _on_stop_button_pressed() -> void:
 	text_to_be_displayed("Filling process has stopped")
 	
 var cup
-func _on_cup_detection_body_entered(body: Node2D) -> void:
-	cup = body
-	print("Cup has been detected")
-	Cup_detection_value = 1
-	print(Cup_detection_value)
-	text_to_be_displayed("Cup has been detected")
+func _on_cup_detection_body_entered(body) -> void:
+	print(body)
+	if body is Cup_node:
+		cup = body
+		print("Cup has been detected")
+		Cup_detection_value = 1
+		print(Cup_detection_value)
+		text_to_be_displayed("Cup has been detected")
+	elif body is Ethan_Puck:
+		cup = null
+		print("Bodoh, fuck are you tryna do?")
 	
-func _on_cup_detection_body_exited(body: Node2D) -> void:
-	cup = 0
-	print("Cup has left")
-	Cup_detection_value = 0
-	print(Cup_detection_value)
-	text_to_be_displayed("Cup has been taken away")
-	is_filling = false
-	is_full = false
+func _on_cup_detection_body_exited(body) -> void:
+	print(body)
+	if body is Cup_node:
+		cup = null
+		print("Cup has left")
+		Cup_detection_value = 0
+		print(Cup_detection_value)
+		text_to_be_displayed("Cup has been taken away")
+		is_filling = false
+		is_full = false
 	
 func displaying_text():
 	Text_label.visible_characters= 0
@@ -75,12 +82,20 @@ func text_to_be_displayed(text : String):
 	displaying_text()
 
 func _on_puck_detection_body_entered(body: CharacterBody2D) -> void:
-	coffee_flavour = body.flavour
-	Puck_detec = true
-	text_to_be_displayed("Puck has been detected")
-	await get_tree().create_timer(2).timeout
-	text_to_be_displayed("Coffee flavour is " + coffee_flavour)
+	print(body)
+	if body == Ethan_Puck:
+		coffee_flavour = body.flavour
+		Puck_detec = true
+		text_to_be_displayed("Puck has been detected")
+		await get_tree().create_timer(2).timeout
+		text_to_be_displayed("Coffee flavour is " + coffee_flavour)
+	else:
+		print("Bodoh, fuck are you trying to do?")
 	
 func _on_puck_detection_body_exited(body: CharacterBody2D) -> void:
-	Puck_detec = false
-	text_to_be_displayed("Puck has been taken away")
+	print(body)
+	if body is Ethan_Puck:
+		Puck_detec = false
+		text_to_be_displayed("Puck has been taken away")
+	else:
+		print("Bodoh, fuck are you trying to do?")

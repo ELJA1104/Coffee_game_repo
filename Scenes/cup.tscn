@@ -10,9 +10,8 @@ size = Vector2(65, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m13f"]
 size = Vector2(42, 50)
 
-[node name="cup" type="Node2D" unique_id=1073076532 node_paths=PackedStringArray("Text_label", "Progress_Bar_cup")]
+[node name="cup" type="Node2D" unique_id=1073076532 node_paths=PackedStringArray("Progress_Bar_cup")]
 script = ExtResource("1_labsj")
-Text_label = NodePath("")
 Progress_Bar_cup = NodePath("item(cup)/imput other")
 
 [node name="item(cup)" type="CharacterBody2D" parent="." unique_id=969784243 node_paths=PackedStringArray("Progress_Bar_cup")]

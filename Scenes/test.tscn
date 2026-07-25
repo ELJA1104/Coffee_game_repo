@@ -68,10 +68,6 @@ offset_bottom = -136.0
 theme_override_font_sizes/font_size = 10
 text = "Stop"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1362637732]
-position = Vector2(0, -64)
-zoom = Vector2(1.5, 1.5)
-
 [node name="Label" type="Label" parent="." unique_id=1508481027]
 offset_left = -184.0
 offset_top = 80.0

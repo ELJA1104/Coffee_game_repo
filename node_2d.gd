@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Ethan_Puck
 @export var btn : Button
 @export var Text_label : Label
 var dragged : bool = false
