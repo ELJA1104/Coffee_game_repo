@@ -25,7 +25,7 @@ func _on_button_pressed() -> void:
 	times += 1
 	if coffee_entered:
 		if times > runtime:
-			Signalbus.eltp.emit()
+			get_tree().call_group("idk","a")
 			label.text = "Congrat" 
 	else:
 		if  times > runtime:
