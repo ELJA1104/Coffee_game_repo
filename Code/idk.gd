@@ -13,7 +13,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		coffee_entered = true
 	else:
 		coffee_entered = false
-	Signalbus.eltp.emit()
+
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
