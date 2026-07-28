@@ -3,10 +3,15 @@ class_name Cup_node
 var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
 @export var Progress_Bar_cup : ProgressBar
+@export var Text_label : Label
+var flavour : String
+var temp : String
 
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	drink_select()
+	text_to_be_displayed(temp + flavour)
 
 func _process(_delta):
 	if when_is_grab_cup:
@@ -47,6 +52,38 @@ func cup_return_to_zero():
 func tp_tcup(tcup):
 	global_position = tcup
 #========================================================
+
+func drink_select():
+	var ran_drink = randi_range(0,6)
+	if ran_drink == 0:
+		flavour = "Water"
+	elif ran_drink == 1:
+		flavour = "Americano"
+	elif ran_drink == 2:
+		flavour = "Cappuccino"
+	elif ran_drink == 3:
+		flavour = "Espresso"
+	elif ran_drink == 4:
+		flavour = "Macchiato"
+	elif ran_drink == 5:
+		flavour = "Mocha"
+	elif ran_drink == 6:
+		flavour = "Latte"
+	var ran_ice = randi_range(0,1)
+	if ran_ice == 0:
+		temp = "Hot "
+	elif ran_ice == 1:
+		temp = "Iced "
+		
+func displaying_text():
+	Text_label.visible_characters= 0
+	for i in Text_label.text.length():
+		Text_label.visible_characters += 1
+		await get_tree().create_timer(0.03).timeout
+		
+func text_to_be_displayed(text : String):
+	Text_label.text = text
+	displaying_text()
 
 #=============================================================
 
