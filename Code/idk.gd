@@ -7,6 +7,9 @@ var coffee_entered :bool = false
 @onready var runtime :int = 10
 @onready var label :Label = $Label
 
+func _ready() -> void:
+	get_tree().call_group("idk","a")
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("coffee bean"):
