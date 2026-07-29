@@ -1,11 +1,11 @@
 extends Node2D
 
+@onready var a1 = load("res://Scenes/idk.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	var idk = a1.instantiate()
+	var a2 = idk.get_node("Area2D")
+	a2.tcup.connect(a)
+	add_child(idk)
+func a():
+	print("a")

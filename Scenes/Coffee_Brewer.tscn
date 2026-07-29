@@ -1,82 +1,67 @@
 [gd_scene format=3 uid="uid://b1hub4lvnhwtb"]
 
-[ext_resource type="Script" uid="uid://dmblq0ghl6xvg" path="res://Code/test.gd" id="1_lc1oi"]
+[ext_resource type="Script" uid="uid://cmfj4q7jd8bvs" path="res://Code/Coffee_Brewer.gd" id="1_wovsr"]
+[ext_resource type="Texture2D" uid="uid://b5uh8geo2jm8a" path="res://Assets/Coffee_Machine.png" id="2_8od7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(168, 48)
+size = Vector2(224, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(168, 56)
+size = Vector2(256, 56)
 
 [node name="Coffeebrewer" type="Node2D" unique_id=204845374 node_paths=PackedStringArray("Pug_detec", "Cup_detec", "cup_tp_pos", "puck_tp_pos", "Text_label")]
-script = ExtResource("1_lc1oi")
+script = ExtResource("1_wovsr")
 Pug_detec = NodePath("Puck detection")
 Cup_detec = NodePath("Cup detection")
 cup_tp_pos = NodePath("Cup detection/Cup_tp_destination")
 puck_tp_pos = NodePath("Puck detection/Puck_tp_destination")
 Text_label = NodePath("Label")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=745951462]
-offset_left = -136.0
-offset_top = -240.0
-offset_right = 80.0
-offset_bottom = -208.0
-
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=362212565]
-offset_left = -136.0
-offset_top = -240.0
-offset_right = -88.0
-offset_bottom = -8.0
-
-[node name="ColorRect3" type="ColorRect" parent="." unique_id=1850237608]
-offset_left = -168.0
-offset_top = -8.0
-offset_right = 120.0
-offset_bottom = 32.0
+[node name="CoffeeMachine" type="Sprite2D" parent="." unique_id=1093614342]
+position = Vector2(15.375, 0)
+rotation = 1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_8od7v")
 
 [node name="Puck detection" type="Area2D" parent="." unique_id=854129398]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puck detection" unique_id=1757694897]
-position = Vector2(-4, -184)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Puck_tp_destination" type="Node2D" parent="Puck detection" unique_id=1185130667]
-position = Vector2(0, -184)
+position = Vector2(4, 0)
 
 [node name="Cup detection" type="Area2D" parent="." unique_id=968435946]
+position = Vector2(0, 80)
 
 [node name="Cup_tp_destination" type="Node2D" parent="Cup detection" unique_id=2136124169]
-position = Vector2(0, -40)
+position = Vector2(4, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cup detection" unique_id=1550581908]
-position = Vector2(-4, -36)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Start" type="Button" parent="." unique_id=1102906672]
 offset_left = -128.0
-offset_top = -192.0
+offset_top = -152.0
 offset_right = -96.0
-offset_bottom = -168.0
+offset_bottom = -128.0
 theme_override_font_sizes/font_size = 10
 text = "Start"
 
 [node name="Stop" type="Button" parent="." unique_id=1381310252]
 offset_left = -128.0
-offset_top = -160.0
+offset_top = -120.0
 offset_right = -96.0
-offset_bottom = -136.0
+offset_bottom = -96.0
 theme_override_font_sizes/font_size = 10
 text = "Stop"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1362637732]
-position = Vector2(0, -64)
-zoom = Vector2(1.5, 1.5)
-
 [node name="Label" type="Label" parent="." unique_id=1508481027]
-offset_left = -184.0
-offset_top = 80.0
-offset_right = 144.0
-offset_bottom = 128.0
+offset_left = -192.0
+offset_top = 192.0
+offset_right = 192.0
+offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bd267dnu2okq3"]
 
 [ext_resource type="Script" uid="uid://xyxv1ja1w67t" path="res://Code/idk.gd" id="1_ngukw"]
-[ext_resource type="Script" uid="uid://wqqs8ktegjen" path="res://Code/idk2.gd" id="2_8su8k"]
+[ext_resource type="Script" uid="uid://wqqs8ktegjen" path="res://Scenes/idk2.gd" id="2_8su8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngukw"]
 size = Vector2(81, 45)
 
-[node name="Grinder" type="Node2D" unique_id=985036243 groups=["coffee bean", "idk"]]
+[node name="Grinder" type="Node2D" unique_id=985036243]
 position = Vector2(339, 194)
 script = ExtResource("1_ngukw")
 

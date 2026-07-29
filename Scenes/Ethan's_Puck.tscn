@@ -5,10 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fwwm"]
 size = Vector2(147, 35)
 
-[node name="Ethan\'s Puck" type="CharacterBody2D" unique_id=1396477318 node_paths=PackedStringArray("btn", "Text_label")]
+[node name="Ethan\'s Puck" type="CharacterBody2D" unique_id=1459799583 node_paths=PackedStringArray("btn")]
 script = ExtResource("1_7w7w6")
 btn = NodePath("Button")
-Text_label = NodePath("Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471368098]
 position = Vector2(20.5, -11.5)
@@ -33,14 +32,6 @@ offset_top = -32.0
 offset_right = 96.0
 offset_bottom = -16.0
 color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="." unique_id=1565645880]
-offset_left = -56.0
-offset_top = 8.0
-offset_right = 96.0
-offset_bottom = 31.0
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
