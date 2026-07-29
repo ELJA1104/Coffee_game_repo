@@ -2,6 +2,7 @@ extends CharacterBody2D
 var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
 @export var Progress_Bar_cup : ProgressBar
+@export var ice : Node2D
 
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
@@ -44,6 +45,13 @@ func cup_return_to_zero():
 	Progress_Bar_cup.value = 0
 	pass
 #=================================================================================================================================================================
+func ice_in():
+	Progress_Bar_cup.show()
+	ice.hide_ice()
+	while Progress_Bar_cup.value < Progress_Bar_cup.max_value:
+		Progress_Bar_cup.value += 0.5
+		await get_tree().create_timer(0.01).timeout
+#====================================================================
 func tp_tcup(tcup):
 	global_position = tcup
 #========================================================

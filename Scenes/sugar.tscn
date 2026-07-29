@@ -7,9 +7,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2m13f"]
 size = Vector2(131, 125)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0v5d"]
-size = Vector2(130, 131)
-
 [node name="sugar" type="Node2D" unique_id=328394952]
 script = ExtResource("1_xng1b")
 
@@ -24,14 +21,3 @@ texture = ExtResource("1_pfnow")
 [node name="draw" type="CollisionShape2D" parent="item(sugar)" unique_id=352353609]
 position = Vector2(0.5, 2.5)
 shape = SubResource("RectangleShape2D_2m13f")
-
-[node name="Area2D" type="Area2D" parent="item(sugar)" unique_id=268295961]
-collision_layer = 64
-collision_mask = 64
-
-[node name="add in cup" type="CollisionShape2D" parent="item(sugar)/Area2D" unique_id=1999185667]
-light_mask = 64
-visibility_layer = 64
-position = Vector2(1, 5.5)
-shape = SubResource("RectangleShape2D_t0v5d")
-debug_color = Color(0.66723204, 0.5112338, 0, 0.41960785)
