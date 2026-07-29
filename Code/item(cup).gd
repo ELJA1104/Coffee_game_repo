@@ -6,6 +6,7 @@ var mouse_inside_cup : bool = false
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	Progress_Bar_cup.hide()
 
 func _process(_delta):
 	if when_is_grab_cup:
