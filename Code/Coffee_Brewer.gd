@@ -9,6 +9,7 @@ var B : String
 var is_filling : bool = false
 var is_full : bool = false
 var coffee_flavour
+var req_temp
 var Puck_detec : bool = false
 
 func _physics_process(delta: float) -> void:
@@ -23,22 +24,25 @@ func _physics_process(delta: float) -> void:
 			is_full = true
 			
 	if is_full == true:
-		if Puck_detec == true:
-			text_to_be_displayed("Your cup of " + coffee_flavour + " has been brewed")
-		elif Puck_detec == false:
+		if cup.hot_water_protocol == false:
+			text_to_be_displayed("Your " + req_temp + "cup of " + coffee_flavour + " has been brewed")
+		elif cup.hot_water_protocol == true:
 			text_to_be_displayed("Your cup of hot water has been brewed")
 	elif is_full == false:
 		pass
 
 func _on_start_button_pressed() -> void:
-	if Cup_detection_value == 1:
-		print("start button is pressed")
-		is_filling = true
-		
-		text_to_be_displayed("Filling process has started")
-	elif Cup_detection_value== 0:
-		print("Something is missing!")
-		text_to_be_displayed("Cup has not been detected")
+	if cup.hot_water_protocol == false and Puck_detec == false:
+		text_to_be_displayed("This drink requires a Puck")
+	else:
+		if Cup_detection_value == 1:
+			print("start button is pressed")
+			is_filling = true	
+			text_to_be_displayed("Filling process has started")
+		elif Cup_detection_value== 0:
+			print("Something is missing!")
+			text_to_be_displayed("Cup has not been detected")
+
 
 func _on_stop_button_pressed() -> void:
 	print("stop button is pressed")
@@ -52,10 +56,13 @@ func _on_cup_detection_body_entered(body) -> void:
 	print(body)
 	if body is Cup_node:
 		cup = body
+		coffee_flavour = body.flavour
+		req_temp = body.temp
 		print("Cup has been detected")
 		Cup_detection_value = 1
 		print(Cup_detection_value)
 		text_to_be_displayed("Cup has been detected")
+			
 	elif body is Ethan_Puck:
 		cup = null
 		text_to_be_displayed("This is for the cup, not the puck")
@@ -64,6 +71,8 @@ func _on_cup_detection_body_exited(body) -> void:
 	print(body)
 	if body is Cup_node:
 		cup = null
+		coffee_flavour = null
+		req_temp = null
 		print("Cup has left")
 		Cup_detection_value = 0
 		print(Cup_detection_value)
@@ -85,11 +94,8 @@ func text_to_be_displayed(text : String):
 func _on_puck_detection_body_entered(body: CharacterBody2D) -> void:
 	print(body)
 	if body is Ethan_Puck:
-		coffee_flavour = body.flavour
 		Puck_detec = true
 		text_to_be_displayed("Puck has been detected")
-		await get_tree().create_timer(2).timeout
-		text_to_be_displayed("Coffee flavour is " + coffee_flavour)
 	else:
 		text_to_be_displayed("This is for the puck, not the cup")
 	
