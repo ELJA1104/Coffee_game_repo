@@ -50,8 +50,8 @@ offset_right = 111.0
 offset_bottom = -45.0
 
 [node name="Area2D" type="Area2D" parent="item(cup)" unique_id=1773577479]
-collision_layer = 112
-collision_mask = 112
+collision_layer = 16
+collision_mask = 16
 
 [node name="add things" type="CollisionShape2D" parent="item(cup)/Area2D" unique_id=1868099688]
 light_mask = 112

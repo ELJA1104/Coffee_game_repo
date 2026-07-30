@@ -1,0 +1,5 @@
+extends Node
+
+signal ice_hidden_permition
+signal milk_hidden_permition
+signal sugar_hidden_permition

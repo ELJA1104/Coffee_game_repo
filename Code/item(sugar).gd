@@ -6,6 +6,7 @@ var mouse_inside_sugar : bool = false
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	add_to_group("sugar")
 	
 func _process(_delta):
 	if when_is_grab_sugar:

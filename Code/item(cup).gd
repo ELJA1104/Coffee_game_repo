@@ -1,6 +1,7 @@
 extends CharacterBody2D
 var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
+var can_add_things : bool = false
 @export var Progress_Bar_cup : ProgressBar
 @export var ice : Node2D
 
@@ -16,6 +17,9 @@ func _process(_delta):
 		return
 
 
+
+
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed and mouse_inside_cup:
@@ -28,6 +32,10 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	mouse_inside_cup = false
+	
+	
+
+
 #========================================================================================
 
 func cup_fill():
@@ -45,12 +53,50 @@ func cup_return_to_zero():
 	Progress_Bar_cup.value = 0
 	pass
 #=================================================================================================================================================================
+func no_in():
+	can_add_things = false
+	print('stop add things *2')
+	
 func ice_in():
-	Progress_Bar_cup.show()
-	ice.hide_ice()
-	while Progress_Bar_cup.value < Progress_Bar_cup.max_value:
-		Progress_Bar_cup.value += 0.5
-		await get_tree().create_timer(0.01).timeout
+	can_add_things = true
+	await get_tree().create_timer(3).timeout
+	if can_add_things:
+		Noel_sEvent.ice_hidden_permition.emit() 
+		Progress_Bar_cup.show()
+		while Progress_Bar_cup.value < Progress_Bar_cup.max_value:
+			Progress_Bar_cup.value += 0.5
+			await get_tree().create_timer(0.05).timeout
+		print('ice done')
+		Progress_Bar_cup.hide()
+		Progress_Bar_cup.value = 0
+	
+func milk_in():
+	can_add_things = true
+	await get_tree().create_timer(3).timeout
+	if can_add_things:
+		Noel_sEvent.milk_hidden_permition.emit() 
+		Progress_Bar_cup.show()
+		while Progress_Bar_cup.value < Progress_Bar_cup.max_value:
+			Progress_Bar_cup.value += 0.5
+			await get_tree().create_timer(0.05).timeout
+		print('milk done')
+		Progress_Bar_cup.hide()
+		Progress_Bar_cup.value = 0
+	else:
+		pass
+		
+func sugar_in():
+	can_add_things = true
+	await get_tree().create_timer(3).timeout
+	if can_add_things:
+		Noel_sEvent.sugar_hidden_permition.emit() 
+		Progress_Bar_cup.show()
+		while Progress_Bar_cup.value < Progress_Bar_cup.max_value:
+			Progress_Bar_cup.value += 0.5
+			await get_tree().create_timer(0.05).timeout
+		print('sugar in')
+		Progress_Bar_cup.hide()
+		Progress_Bar_cup.value = 0
 #====================================================================
 func tp_tcup(tcup):
 	global_position = tcup

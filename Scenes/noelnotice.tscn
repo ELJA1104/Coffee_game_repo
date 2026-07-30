@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bgcicvlhyuw0c"]
+
+[ext_resource type="Script" uid="uid://2a4kxl8vau2c" path="res://Code/noel's_event.gd" id="1_e43w7"]
+
+[node name="Node" type="Node" unique_id=1621982061]
+script = ExtResource("1_e43w7")
