@@ -59,3 +59,11 @@ visibility_layer = 112
 position = Vector2(-9, 4)
 shape = SubResource("RectangleShape2D_2m13f")
 debug_color = Color(0.6763681, 0.5055194, 0.05922377, 0.41960785)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="item(cup)" unique_id=401616676]
+offset_left = 41.0
+offset_top = -45.0
+offset_right = 244.0
+offset_bottom = 26.0
+text = "empty(none)mkkkkkkkkkkkkkk"
+scroll_active = false

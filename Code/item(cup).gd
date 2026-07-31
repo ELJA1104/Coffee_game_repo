@@ -9,6 +9,7 @@ func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	Progress_Bar_cup.hide()
+	Noel_sEvent.ice_hidden_permition.connect(tp_cup)
 
 func _process(_delta):
 	if when_is_grab_cup:
@@ -29,6 +30,7 @@ func _input(event: InputEvent) -> void:
 			
 func _on_mouse_entered():
 	mouse_inside_cup = true
+	show_label()
 
 func _on_mouse_exited():
 	mouse_inside_cup = false
@@ -67,8 +69,11 @@ func ice_in():
 			Progress_Bar_cup.value += 0.5
 			await get_tree().create_timer(0.05).timeout
 		print('ice done')
+		add_to_group("add_label:ice")
 		Progress_Bar_cup.hide()
 		Progress_Bar_cup.value = 0
+	else:
+		pass
 	
 func milk_in():
 	can_add_things = true
@@ -80,6 +85,7 @@ func milk_in():
 			Progress_Bar_cup.value += 0.5
 			await get_tree().create_timer(0.05).timeout
 		print('milk done')
+		add_to_group("add_label:milk")
 		Progress_Bar_cup.hide()
 		Progress_Bar_cup.value = 0
 	else:
@@ -95,14 +101,30 @@ func sugar_in():
 			Progress_Bar_cup.value += 0.5
 			await get_tree().create_timer(0.05).timeout
 		print('sugar in')
+		add_to_group("add_label:sugar")
 		Progress_Bar_cup.hide()
 		Progress_Bar_cup.value = 0
+	else:
+		pass
+		
+#======================================================================
+func show_label():
+	pass
 #====================================================================
-func tp_tcup(tcup):
-	global_position = tcup
+func tp_cup(cup):
+	global_position = cup
 #========================================================
-
+func blablabla():
+	Noel_sEvent.cup_tp_permition.emit(global_position) 
 #=============================================================
+
+
+
+
+
+
+
+
 
 #signal tcup(global_position: Vector2)
 
