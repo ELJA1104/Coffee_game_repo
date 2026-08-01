@@ -4,23 +4,25 @@ var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
 var can_add_things : bool = false
 var hot_water_protocol : bool = false
+var ran_ice  : bool = true
 @export var Progress_Bar_cup : ProgressBar
 @export var ice : Node2D
 @export var Text_label : Label
 var flavour : String
 var temp : String
 
+
 func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	Progress_Bar_cup.hide()
-<<<<<<< HEAD
-	Noel_sEvent.ice_hidden_permition.connect(tp_cup)
-=======
+	Noel_sEvent.cup_tp_permition.connect(tp_cup)
 	drink_select()
+	hot_or_iced()
 	text_to_be_displayed(temp + flavour)
+	
 
->>>>>>> 25b0a94dafae371f2bca845f91aee053d2493aa5
+
 
 func _process(_delta):
 	if when_is_grab_cup:
@@ -41,7 +43,7 @@ func _input(event: InputEvent) -> void:
 			
 func _on_mouse_entered():
 	mouse_inside_cup = true
-	show_label()
+	
 
 func _on_mouse_exited():
 	mouse_inside_cup = false
@@ -83,6 +85,8 @@ func ice_in():
 		add_to_group("add_label:ice")
 		Progress_Bar_cup.hide()
 		Progress_Bar_cup.value = 0
+		ran_ice = false
+		hot_or_iced()
 	else:
 		pass
 	
@@ -119,16 +123,15 @@ func sugar_in():
 		pass
 		
 #======================================================================
-func show_label():
-	pass
+
 #====================================================================
 func tp_cup(cup):
 	global_position = cup
 #========================================================
-<<<<<<< HEAD
-func blablabla():
-	Noel_sEvent.cup_tp_permition.emit(global_position) 
-=======
+
+'func blablabla():
+	Noel_sEvent.cup_tp_permition.emit(global_position) '
+
 func drink_select():
 	var ran_drink = randi_range(0,6)
 	if ran_drink == 0:
@@ -145,15 +148,20 @@ func drink_select():
 		flavour = "Mocha"
 	elif ran_drink == 6:
 		flavour = "Latte"
-	var ran_ice = randi_range(0,1)
-	if ran_ice == 0:
+
+func hot_or_iced():
+	if ran_ice:
+		print('hot')
 		temp = "Hot "
-	elif ran_ice == 1:
+	else:
+		print('cold')
 		temp = "Iced "
 	if temp == "Iced " and flavour == "Water":
 		temp = "Hot "
 	if temp == "Hot " and flavour == "Water":
 		hot_water_protocol = true
+	text_to_be_displayed(temp + flavour)
+	
 func displaying_text():
 	Text_label.visible_characters= 0
 	for i in Text_label.text.length():
@@ -164,7 +172,6 @@ func text_to_be_displayed(text : String):
 	Text_label.text = text
 	displaying_text()
 
->>>>>>> 25b0a94dafae371f2bca845f91aee053d2493aa5
 #=============================================================
 
 
