@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cafrui7pjxh8x"
-path="res://.godot/imported/Cup.png-847bb4b2ede1b59109e8ed3e1d537fd9.ctex"
+uid="uid://bbpibx4f6l7cl"
+path="res://.godot/imported/Coffee_Grinder.png-3df4f3462f5d2890bae35b31045bba4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cup.png"
-dest_files=["res://.godot/imported/Cup.png-847bb4b2ede1b59109e8ed3e1d537fd9.ctex"]
+source_file="res://Assets/PNG/Coffee_Grinder.png"
+dest_files=["res://.godot/imported/Coffee_Grinder.png-3df4f3462f5d2890bae35b31045bba4a.ctex"]
 
 [params]
 

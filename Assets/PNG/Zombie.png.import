@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5uh8geo2jm8a"
-path="res://.godot/imported/Coffee_Machine.png-0196d14bc4d78c6af606d6ea8bd0467e.ctex"
+uid="uid://d4l37wmj6obym"
+path="res://.godot/imported/Zombie.png-5d582fbac93adde2c93fe45a8585cf6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Coffee_Machine.png"
-dest_files=["res://.godot/imported/Coffee_Machine.png-0196d14bc4d78c6af606d6ea8bd0467e.ctex"]
+source_file="res://Assets/PNG/Zombie.png"
+dest_files=["res://.godot/imported/Zombie.png-5d582fbac93adde2c93fe45a8585cf6e.ctex"]
 
 [params]
 

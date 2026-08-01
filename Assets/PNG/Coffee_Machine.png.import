@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo5num3d6yvfa"
-path="res://.godot/imported/Game_Protag.png-dddef8358f84a914f84fd020ea55cec7.ctex"
+uid="uid://b5uh8geo2jm8a"
+path="res://.godot/imported/Coffee_Machine.png-3e9d1b8934796791112dea17a8ed4fe3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Game_Protag.png"
-dest_files=["res://.godot/imported/Game_Protag.png-dddef8358f84a914f84fd020ea55cec7.ctex"]
+source_file="res://Assets/PNG/Coffee_Machine.png"
+dest_files=["res://.godot/imported/Coffee_Machine.png-3e9d1b8934796791112dea17a8ed4fe3.ctex"]
 
 [params]
 
