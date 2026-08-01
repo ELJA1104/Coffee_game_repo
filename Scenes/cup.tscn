@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtqojehmqwacy" path="res://Code/cup.gd" id="1_labsj"]
 [ext_resource type="Script" uid="uid://dvlf1snrhin1g" path="res://Code/item(cup).gd" id="2_bu4t0"]
-[ext_resource type="Texture2D" uid="uid://cafrui7pjxh8x" path="res://Assets/Cup.png" id="3_labsj"]
+[ext_resource type="Texture2D" uid="uid://cafrui7pjxh8x" path="res://Assets/PNG/Cup.png" id="3_labsj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6vj4"]
 size = Vector2(50.5, 71)
@@ -20,9 +20,9 @@ script = ExtResource("2_bu4t0")
 Progress_Bar_cup = NodePath("imput other")
 Text_label = NodePath("Label")
 
-[node name="Cup" type="Sprite2D" parent="item(cup)" unique_id=109409347]
+[node name="Cup2" type="Sprite2D" parent="item(cup)" unique_id=1007891922]
 rotation = -1.5707964
-scale = Vector2(0.025, 0.025)
+scale = Vector2(0.03, 0.03)
 texture = ExtResource("3_labsj")
 
 [node name="draw" type="CollisionShape2D" parent="item(cup)" unique_id=2105860307]
