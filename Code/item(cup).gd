@@ -161,6 +161,8 @@ func hot_or_iced():
 		temp = "Hot "
 	if temp == "Hot " and flavour == "Water":
 		hot_water_protocol = true
+	if temp == "Iced " and ran_drink == 0:
+		text_to_be_displayed(temp + flavour + 'cannot add with the cooffe now' )
 	text_to_be_displayed(temp + flavour )
 	
 func displaying_text():
