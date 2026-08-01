@@ -4,12 +4,13 @@ var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
 var can_add_things : bool = false
 var hot_water_protocol : bool = false
-var ran_ice  : bool = true
 @export var Progress_Bar_cup : ProgressBar
 @export var ice : Node2D
 @export var Text_label : Label
 var flavour : String
 var temp : String
+var ran_ice  : bool = true
+var ran_drink = randi_range(0,6)
 
 
 func _ready():
@@ -19,7 +20,7 @@ func _ready():
 	Noel_sEvent.cup_tp_permition.connect(tp_cup)
 	drink_select()
 	hot_or_iced()
-	text_to_be_displayed(temp + flavour)
+	text_to_be_displayed(temp + flavour )
 	
 
 
@@ -133,7 +134,6 @@ func tp_cup(cup):
 	Noel_sEvent.cup_tp_permition.emit(global_position) '
 
 func drink_select():
-	var ran_drink = randi_range(0,6)
 	if ran_drink == 0:
 		flavour = "Water"
 	elif ran_drink == 1:
@@ -149,6 +149,7 @@ func drink_select():
 	elif ran_drink == 6:
 		flavour = "Latte"
 
+
 func hot_or_iced():
 	if ran_ice:
 		print('hot')
@@ -160,7 +161,7 @@ func hot_or_iced():
 		temp = "Hot "
 	if temp == "Hot " and flavour == "Water":
 		hot_water_protocol = true
-	text_to_be_displayed(temp + flavour)
+	text_to_be_displayed(temp + flavour )
 	
 func displaying_text():
 	Text_label.visible_characters= 0

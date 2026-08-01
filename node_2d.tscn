@@ -2,20 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cgqjx1k2rpcd4" path="res://Scenes/cup.tscn" id="2_0hol4"]
 [ext_resource type="PackedScene" uid="uid://bgcicvlhyuw0c" path="res://Scenes/noelnotice.tscn" id="3_epypp"]
-[ext_resource type="PackedScene" uid="uid://ci7c6riru6aal" path="res://Scenes/sugar.tscn" id="3_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://bp0pcatmwiqoy" path="res://Scenes/ice.tscn" id="4_0hol4"]
-[ext_resource type="PackedScene" uid="uid://bimw0kvfh100m" path="res://Scenes/milk.tscn" id="4_q6r6c"]
 
 [node name="Node2D" type="Node2D" unique_id=1030427442]
 
-[node name="milk" parent="." unique_id=1519699551 instance=ExtResource("4_q6r6c")]
-position = Vector2(379, 326)
-
 [node name="ice" parent="." unique_id=1647408933 instance=ExtResource("4_0hol4")]
 position = Vector2(269, 263)
-
-[node name="sugar" parent="." unique_id=328394952 instance=ExtResource("3_q6r6c")]
-position = Vector2(538, 448)
 
 [node name="cup" parent="." unique_id=1073076532 instance=ExtResource("2_0hol4")]
 position = Vector2(742, 251)
@@ -27,3 +19,9 @@ position = Vector2(263, 561)
 position = Vector2(171, 445)
 
 [node name="Node" parent="." unique_id=1621982061 instance=ExtResource("3_epypp")]
+
+[node name="ice2" parent="." unique_id=2077582004 instance=ExtResource("4_0hol4")]
+position = Vector2(649, 489)
+
+[node name="ice3" parent="." unique_id=834611395 instance=ExtResource("4_0hol4")]
+position = Vector2(506, 263)
