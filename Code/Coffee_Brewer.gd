@@ -7,7 +7,6 @@ extends Node2D
 @export var Text_label : Label
 var B : String
 var is_filling : bool = false
-var is_full : int = 0
 var coffee_flavour
 var req_temp
 var Puck_detec : bool = false
@@ -21,19 +20,18 @@ func _physics_process(delta: float) -> void:
 			cup.cup_stop_fill()
 			
 		if cup.Progress_Bar_cup.value >= 99:
-			is_full = 1
-			
-	if is_full == 1:
-		if cup.hot_water_protocol == false:
-			text_to_be_displayed("Your " + req_temp + "cup of " + coffee_flavour + " has been brewed")
-		elif cup.hot_water_protocol == true:
-			text_to_be_displayed("Your cup of hot water has been brewed")
-	elif is_full == 0:
-		pass
+			if cup.hot_water_protocol == false:
+				text_to_be_displayed("Your " + req_temp + "cup of " + coffee_flavour + " has been brewed")
+			elif cup.hot_water_protocol == true:
+				text_to_be_displayed("Your cup of hot water has been brewed")
+		elif cup.Progress_Bar_cup.value <= 99:
+			pass
 
 func _on_start_button_pressed() -> void:
 	if cup.hot_water_protocol == false and Puck_detec == false:
 		text_to_be_displayed("This drink requires a Puck")
+	elif cup.hot_water_protocol == true and Puck_detec == true:
+		text_to_be_displayed("This drink does not require a puck")
 	else:
 		if Cup_detection_value == 1:
 			print("start button is pressed")
@@ -78,7 +76,6 @@ func _on_cup_detection_body_exited(body) -> void:
 		print(Cup_detection_value)
 		text_to_be_displayed("Cup has been taken away")
 		is_filling = false
-		is_full = false
 	else:
 		pass
 func displaying_text():
