@@ -7,5 +7,5 @@ func _ready() -> void:
 	var a2 = idk.get_node("Area2D")
 	a2.tcup.connect(a)
 	add_child(idk)
-func a():
-	print("a")
+func a(grinder_position):
+	print(grinder_position)
