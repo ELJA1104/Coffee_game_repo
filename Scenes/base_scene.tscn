@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://o6bbeve4pbn1" path="res://Scenes/coffe_bean.tscn" id="4_kvnw2"]
 [ext_resource type="PackedScene" uid="uid://bd267dnu2okq3" path="res://Scenes/idk.tscn" id="5_kvnw2"]
 [ext_resource type="PackedScene" uid="uid://cty03jb2sdxnc" path="res://Scenes/Ethan's_Puck.tscn" id="6_cg6vo"]
+[ext_resource type="PackedScene" uid="uid://bimw0kvfh100m" path="res://Scenes/milk.tscn" id="7_6xwkn"]
+[ext_resource type="PackedScene" uid="uid://bp0pcatmwiqoy" path="res://Scenes/ice.tscn" id="8_pw8rc"]
+[ext_resource type="PackedScene" uid="uid://ci7c6riru6aal" path="res://Scenes/sugar.tscn" id="9_16yq7"]
 
 [node name="Node2D" type="Node2D" unique_id=800427921]
 script = ExtResource("1_5yig4")
@@ -19,7 +22,7 @@ position = Vector2(-16, 70)
 position = Vector2(-290, -21)
 
 [node name="Grinder" parent="." unique_id=985036243 instance=ExtResource("5_kvnw2")]
-position = Vector2(303, 13)
+position = Vector2(-56, -32)
 
 [node name="coffe bean" parent="." unique_id=204909395 instance=ExtResource("4_kvnw2")]
 position = Vector2(-336, -191)
@@ -50,3 +53,12 @@ position = Vector2(392, -96)
 
 [node name="Ethan\'s Puck5" parent="." unique_id=761766134 instance=ExtResource("6_cg6vo")]
 position = Vector2(168, -224)
+
+[node name="milk" parent="." unique_id=1519699551 instance=ExtResource("7_6xwkn")]
+position = Vector2(701, 275)
+
+[node name="ice" parent="." unique_id=1647408933 instance=ExtResource("8_pw8rc")]
+position = Vector2(798, 88)
+
+[node name="sugar" parent="." unique_id=328394952 instance=ExtResource("9_16yq7")]
+position = Vector2(1021, 310)

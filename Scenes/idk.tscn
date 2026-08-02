@@ -2,54 +2,55 @@
 
 [ext_resource type="Script" uid="uid://xyxv1ja1w67t" path="res://Code/coffe_grinder.gd" id="1_ngukw"]
 [ext_resource type="Script" uid="uid://wqqs8ktegjen" path="res://Code/coffee_grinder2.gd" id="2_8su8k"]
+[ext_resource type="Texture2D" uid="uid://ddamy71fxii8d" path="res://Code/环+壹戎式叁全建E聿任陸柒拐8别捌玖扌亏古今与合.png" id="2_coo0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngukw"]
-size = Vector2(81, 45)
+size = Vector2(148, 80)
 
 [node name="Grinder" type="Node2D" unique_id=985036243 groups=["coffee bean", "idk"]]
-position = Vector2(339, 194)
+position = Vector2(398, 214)
 script = ExtResource("1_ngukw")
+metadata/_edit_horizontal_guides_ = [-56.0]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=859383585 groups=["idk"]]
-position = Vector2(0, 59)
-script = ExtResource("2_8su8k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=705494650]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_ngukw")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=94998954]
-offset_left = -41.0
-offset_top = 36.0
-offset_right = 40.0
-offset_bottom = 81.0
-color = Color(0.22352941, 1, 1, 0.57254905)
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1052423120]
-offset_left = -41.0
-offset_top = -70.0
-offset_right = 40.0
-offset_bottom = 36.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="." unique_id=2138712474]
-offset_left = -30.0
-offset_top = -104.0
-offset_right = 10.0
-offset_bottom = -81.0
-text = "."
-metadata/_edit_use_anchors_ = true
+[node name="环+壹戎式叁全建e聿任陸柒拐8别捌玖扌亏古今与合" type="Sprite2D" parent="." unique_id=1536447639]
+position = Vector2(-7.75, -13.218216)
+scale = Vector2(0.19097222, 0.1644318)
+texture = ExtResource("2_coo0p")
 
 [node name="Button" type="Button" parent="." unique_id=1075357503]
-offset_left = -24.0
-offset_top = -40.0
-offset_right = 26.0
-offset_bottom = 14.0
+offset_left = 93.0
+offset_top = -66.0
+offset_right = 143.0
+offset_bottom = -12.0
 text = "Press
 Me"
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="." unique_id=2138712474 groups=["idk"]]
+offset_left = -63.75
+offset_top = -50.218246
+offset_right = 246.25
+offset_bottom = -27.218246
+scale = Vector2(0.4, 1.935)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=859383585 groups=["idk"]]
+position = Vector2(-1.75, 121.78175)
+script = ExtResource("2_8su8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=705494650]
+position = Vector2(-4, -297)
+shape = SubResource("RectangleShape2D_ngukw")
+
+[node name="grinding" type="Timer" parent="." unique_id=153467162]
+wait_time = 45.0
+
+[node name="input_time" type="Timer" parent="." unique_id=828962474 groups=["idk"]]
+wait_time = 0.75
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="grinding" to="." method="_on_grinding_timeout"]
+[connection signal="timeout" from="input_time" to="." method="_on_input_time_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1hub4lvnhwtb"]
 
 [ext_resource type="Script" uid="uid://cmfj4q7jd8bvs" path="res://Code/Coffee_Brewer.gd" id="1_wovsr"]
-[ext_resource type="Texture2D" uid="uid://b5uh8geo2jm8a" path="res://Assets/Coffee_Machine.png" id="2_8od7v"]
+[ext_resource type="Texture2D" uid="uid://b5uh8geo2jm8a" path="res://Assets/PNG/Coffee_Machine.png" id="2_wovsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(224, 48)
@@ -17,11 +17,11 @@ cup_tp_pos = NodePath("Cup detection/Cup_tp_destination")
 puck_tp_pos = NodePath("Puck detection/Puck_tp_destination")
 Text_label = NodePath("Label")
 
-[node name="CoffeeMachine" type="Sprite2D" parent="." unique_id=1093614342]
-position = Vector2(15.375, 0)
+[node name="CoffeeMachine2" type="Sprite2D" parent="." unique_id=1343945670]
+position = Vector2(15.425, 0)
 rotation = 1.5707964
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_8od7v")
+texture = ExtResource("2_wovsr")
 
 [node name="Puck detection" type="Area2D" parent="." unique_id=854129398]
 
