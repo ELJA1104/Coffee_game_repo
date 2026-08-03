@@ -1,8 +1,10 @@
 extends Node2D
 
+var b:int = 1
+@onready var label:Label = $Label
 
 func _ready() -> void:
-	Noel_sEvent.connect("cup_tp_permition",a)
-
-func a(_grinder_position):
-	print("a")
+	for i in range(0,b):
+		label.text = "a"+str(b)
+		b += 1
+		await get_tree().create_timer(0.01).timeout

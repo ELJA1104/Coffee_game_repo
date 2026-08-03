@@ -22,7 +22,7 @@ position = Vector2(-16, 70)
 position = Vector2(-290, -21)
 
 [node name="Grinder" parent="." unique_id=985036243 instance=ExtResource("5_kvnw2")]
-position = Vector2(-56, -32)
+position = Vector2(314, 28)
 
 [node name="coffe bean" parent="." unique_id=204909395 instance=ExtResource("4_kvnw2")]
 position = Vector2(-336, -191)

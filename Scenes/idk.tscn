@@ -2,55 +2,80 @@
 
 [ext_resource type="Script" uid="uid://xyxv1ja1w67t" path="res://Code/coffe_grinder.gd" id="1_ngukw"]
 [ext_resource type="Script" uid="uid://wqqs8ktegjen" path="res://Code/coffee_grinder2.gd" id="2_8su8k"]
-[ext_resource type="Texture2D" uid="uid://ddamy71fxii8d" path="res://Code/环+壹戎式叁全建E聿任陸柒拐8别捌玖扌亏古今与合.png" id="2_coo0p"]
+[ext_resource type="Texture2D" uid="uid://6r2wh0qdhhd2" path="res://Assets/PNG/grinder2.png" id="2_d43f1"]
+[ext_resource type="Texture2D" uid="uid://dy3e6ysrco2u4" path="res://Assets/PNG/grinder1.png" id="3_uj8t4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngukw"]
-size = Vector2(148, 80)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nm6h2"]
+radius = 37.0
+height = 96.0
 
 [node name="Grinder" type="Node2D" unique_id=985036243 groups=["coffee bean", "idk"]]
 position = Vector2(398, 214)
 script = ExtResource("1_ngukw")
 metadata/_edit_horizontal_guides_ = [-56.0]
 
-[node name="环+壹戎式叁全建e聿任陸柒拐8别捌玖扌亏古今与合" type="Sprite2D" parent="." unique_id=1536447639]
-position = Vector2(-7.75, -13.218216)
-scale = Vector2(0.19097222, 0.1644318)
-texture = ExtResource("2_coo0p")
+[node name="grinding" type="Timer" parent="." unique_id=153467162]
+wait_time = 30.0
+
+[node name="input_time" type="Timer" parent="." unique_id=828962474 groups=["idk"]]
+wait_time = 0.5
+
+[node name="Grinder2" type="Sprite2D" parent="." unique_id=1782314385]
+position = Vector2(-5.25, -26.999983)
+scale = Vector2(0.22060186, 0.22361112)
+texture = ExtResource("2_d43f1")
+
+[node name="opening_button" type="Button" parent="Grinder2" unique_id=289780640]
+offset_left = -471.72443
+offset_top = -571.03436
+offset_right = 249.65033
+offset_bottom = -305.56766
+rotation = -1.4466648
+
+[node name="Grinder1" type="Sprite2D" parent="." unique_id=1837183893]
+position = Vector2(-12, 44.50002)
+scale = Vector2(0.16666664, 0.16909724)
+texture = ExtResource("3_uj8t4")
+
+[node name="closing_button" type="Button" parent="Grinder1" unique_id=241920198]
+offset_left = -471.93286
+offset_top = -1425.0928
+offset_right = 477.98303
+offset_bottom = -1132.9188
 
 [node name="Button" type="Button" parent="." unique_id=1075357503]
-offset_left = 93.0
-offset_top = -66.0
-offset_right = 143.0
-offset_bottom = -12.0
+offset_left = 110.25
+offset_top = -88.2182
+offset_right = 160.25
+offset_bottom = -34.2182
 text = "Press
 Me"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=2138712474 groups=["idk"]]
-offset_left = -63.75
-offset_top = -50.218246
-offset_right = 246.25
-offset_bottom = -27.218246
-scale = Vector2(0.4, 1.935)
+offset_left = -56.0
+offset_top = 4.9999995
+offset_right = 204.0
+offset_bottom = 50.0
+scale = Vector2(0.365, 0.47)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=859383585 groups=["idk"]]
-position = Vector2(-1.75, 121.78175)
+position = Vector2(-13, 164)
 script = ExtResource("2_8su8k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=705494650]
-position = Vector2(-4, -297)
-shape = SubResource("RectangleShape2D_ngukw")
+position = Vector2(-2, -274)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nm6h2")
 
-[node name="grinding" type="Timer" parent="." unique_id=153467162]
-wait_time = 45.0
-
-[node name="input_time" type="Timer" parent="." unique_id=828962474 groups=["idk"]]
-wait_time = 0.75
-
+[connection signal="timeout" from="grinding" to="." method="_on_grinding_timeout"]
+[connection signal="timeout" from="input_time" to="." method="_on_input_time_timeout"]
+[connection signal="pressed" from="Grinder2/opening_button" to="." method="_on_opening_button_pressed"]
+[connection signal="pressed" from="Grinder1/closing_button" to="." method="_on_closing_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="grinding" to="." method="_on_grinding_timeout"]
-[connection signal="timeout" from="input_time" to="." method="_on_input_time_timeout"]

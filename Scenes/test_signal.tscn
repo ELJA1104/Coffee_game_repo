@@ -4,3 +4,7 @@
 
 [node name="test signal" type="Node2D" unique_id=843197614]
 script = ExtResource("1_ytblo")
+
+[node name="Label" type="Label" parent="." unique_id=633174032]
+offset_right = 40.0
+offset_bottom = 23.0
