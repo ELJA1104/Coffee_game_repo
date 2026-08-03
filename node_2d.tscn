@@ -4,24 +4,99 @@
 [ext_resource type="PackedScene" uid="uid://bgcicvlhyuw0c" path="res://Scenes/noelnotice.tscn" id="3_epypp"]
 [ext_resource type="PackedScene" uid="uid://bp0pcatmwiqoy" path="res://Scenes/ice.tscn" id="4_0hol4"]
 
-[node name="Node2D" type="Node2D" unique_id=1030427442]
-
-[node name="ice" parent="." unique_id=1647408933 instance=ExtResource("4_0hol4")]
-position = Vector2(269, 263)
+[node name="Node2D" type="Node2D" unique_id=1646207730]
 
 [node name="cup" parent="." unique_id=1073076532 instance=ExtResource("2_0hol4")]
-position = Vector2(742, 251)
+position = Vector2(265, 474)
 
-[node name="cup2" parent="." unique_id=2064832971 instance=ExtResource("2_0hol4")]
-position = Vector2(263, 561)
+[node name="cup2" parent="." unique_id=1990219679 instance=ExtResource("2_0hol4")]
+position = Vector2(581, 500)
 
-[node name="cup3" parent="." unique_id=631583403 instance=ExtResource("2_0hol4")]
-position = Vector2(171, 445)
+[node name="cup3" parent="." unique_id=624182272 instance=ExtResource("2_0hol4")]
+position = Vector2(672, 280)
+
+[node name="cup4" parent="." unique_id=424357622 instance=ExtResource("2_0hol4")]
+position = Vector2(891, 454)
+
+[node name="ice" parent="." unique_id=1647408933 instance=ExtResource("4_0hol4")]
+position = Vector2(399, 221)
 
 [node name="Node" parent="." unique_id=1621982061 instance=ExtResource("3_epypp")]
 
-[node name="ice2" parent="." unique_id=2077582004 instance=ExtResource("4_0hol4")]
-position = Vector2(649, 489)
+[node name="ice2" parent="." unique_id=1474958657 instance=ExtResource("4_0hol4")]
+position = Vector2(54, 508)
 
-[node name="ice3" parent="." unique_id=834611395 instance=ExtResource("4_0hol4")]
-position = Vector2(506, 263)
+[node name="ice3" parent="." unique_id=514976173 instance=ExtResource("4_0hol4")]
+position = Vector2(223, 501)
+
+[node name="ice4" parent="." unique_id=1694206807 instance=ExtResource("4_0hol4")]
+position = Vector2(366, 503)
+
+[node name="ice5" parent="." unique_id=239937100 instance=ExtResource("4_0hol4")]
+position = Vector2(681, 505)
+
+[node name="ice6" parent="." unique_id=463556399 instance=ExtResource("4_0hol4")]
+position = Vector2(476, 508)
+
+[node name="ice7" parent="." unique_id=1424634295 instance=ExtResource("4_0hol4")]
+position = Vector2(63, 381)
+
+[node name="ice8" parent="." unique_id=1491154381 instance=ExtResource("4_0hol4")]
+position = Vector2(181, 408)
+
+[node name="ice9" parent="." unique_id=1584586745 instance=ExtResource("4_0hol4")]
+position = Vector2(298, 390)
+
+[node name="ice10" parent="." unique_id=951715585 instance=ExtResource("4_0hol4")]
+position = Vector2(660, 323)
+
+[node name="ice11" parent="." unique_id=194268823 instance=ExtResource("4_0hol4")]
+position = Vector2(394, 424)
+
+[node name="ice12" parent="." unique_id=1212811270 instance=ExtResource("4_0hol4")]
+position = Vector2(505, 413)
+
+[node name="ice13" parent="." unique_id=645303474 instance=ExtResource("4_0hol4")]
+position = Vector2(579, 499)
+
+[node name="ice14" parent="." unique_id=2110762679 instance=ExtResource("4_0hol4")]
+position = Vector2(68, 589)
+
+[node name="ice15" parent="." unique_id=858896606 instance=ExtResource("4_0hol4")]
+position = Vector2(160, 583)
+
+[node name="ice16" parent="." unique_id=661553262 instance=ExtResource("4_0hol4")]
+position = Vector2(141, 508)
+
+[node name="ice17" parent="." unique_id=2096150187 instance=ExtResource("4_0hol4")]
+position = Vector2(286, 581)
+
+[node name="ice18" parent="." unique_id=820460605 instance=ExtResource("4_0hol4")]
+position = Vector2(404, 591)
+
+[node name="ice19" parent="." unique_id=1489564344 instance=ExtResource("4_0hol4")]
+position = Vector2(520, 591)
+
+[node name="ice20" parent="." unique_id=1574630297 instance=ExtResource("4_0hol4")]
+position = Vector2(648, 593)
+
+[node name="ice21" parent="." unique_id=559114054 instance=ExtResource("4_0hol4")]
+position = Vector2(770, 583)
+
+[node name="ice22" parent="." unique_id=1030642106 instance=ExtResource("4_0hol4")]
+position = Vector2(810, 491)
+
+[node name="ice23" parent="." unique_id=839547313 instance=ExtResource("4_0hol4")]
+position = Vector2(621, 418)
+
+[node name="ice24" parent="." unique_id=1051336243 instance=ExtResource("4_0hol4")]
+position = Vector2(720, 420)
+
+[node name="ice25" parent="." unique_id=440753257 instance=ExtResource("4_0hol4")]
+position = Vector2(823, 413)
+
+[node name="ice26" parent="." unique_id=2081180162 instance=ExtResource("4_0hol4")]
+position = Vector2(913, 504)
+
+[node name="ice27" parent="." unique_id=1812294920 instance=ExtResource("4_0hol4")]
+position = Vector2(893, 595)
