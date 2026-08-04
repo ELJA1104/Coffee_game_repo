@@ -10,6 +10,8 @@ var is_filling : bool = false
 var coffee_flavour
 var req_temp
 var Puck_detec : bool = false
+var cup
+var puck
 
 func _physics_process(delta: float) -> void:
 	if cup:
@@ -22,24 +24,35 @@ func _physics_process(delta: float) -> void:
 		if cup.Progress_Bar_cup.value >= 99:
 			if cup.hot_water_protocol == false:
 				text_to_be_displayed("Your " + req_temp + "cup of " + coffee_flavour + " has been brewed")
+				print("fdvk")
 			elif cup.hot_water_protocol == true:
 				text_to_be_displayed("Your cup of hot water has been brewed")
+			if Puck_detec == true:
+				puck.used_once = true
+			elif Puck_detec == false:
+				pass
 		elif cup.Progress_Bar_cup.value <= 99:
 			pass
 
 func _on_start_button_pressed() -> void:
-	if cup.hot_water_protocol == false and Puck_detec == false:
-		text_to_be_displayed("This drink requires a Puck")
-	elif cup.hot_water_protocol == true and Puck_detec == true:
-		text_to_be_displayed("This drink does not require a puck")
-	else:
-		if Cup_detection_value == 1:
-			print("start button is pressed")
-			is_filling = true	
-			text_to_be_displayed("Filling process has started")
-		elif Cup_detection_value== 0:
-			print("Something is missing!")
-			text_to_be_displayed("Cup has not been detected")
+	if puck.used_once == true:
+		text_to_be_displayed("You need to clean out and refil the puck")
+	elif puck.used_once == false:
+		if puck.is_empty == true:
+			text_to_be_displayed("You need  to fill the puck with coffee grounds")
+		elif puck.is_empty == false:
+			if cup.hot_water_protocol == false and Puck_detec == false:
+				text_to_be_displayed("This drink requires a Puck")
+			elif cup.hot_water_protocol == true and Puck_detec == true:
+				text_to_be_displayed("This drink does not require a puck")
+			else:
+				if Cup_detection_value == 1:
+					print("start button is pressed")
+					is_filling = true	
+					text_to_be_displayed("Filling process has started")
+				elif Cup_detection_value== 0:
+					print("Something is missing!")
+					text_to_be_displayed("Cup has not been detected")
 
 
 func _on_stop_button_pressed() -> void:
@@ -49,7 +62,6 @@ func _on_stop_button_pressed() -> void:
 
 	text_to_be_displayed("Filling process has stopped")
 	
-var cup
 func _on_cup_detection_body_entered(body) -> void:
 	print(body)
 	if body is Cup_node:
@@ -91,6 +103,7 @@ func text_to_be_displayed(text : String):
 func _on_puck_detection_body_entered(body: CharacterBody2D) -> void:
 	print(body)
 	if body is Ethan_Puck:
+		puck = body
 		Puck_detec = true
 		text_to_be_displayed("Puck has been detected")
 	else:
@@ -99,5 +112,6 @@ func _on_puck_detection_body_entered(body: CharacterBody2D) -> void:
 func _on_puck_detection_body_exited(body: CharacterBody2D) -> void:
 	print(body)
 	if body is Ethan_Puck:
+		puck = null
 		Puck_detec = false
 		text_to_be_displayed("Puck has been taken away")
