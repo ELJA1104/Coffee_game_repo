@@ -1,24 +1,28 @@
 extends CharacterBody2D
 class_name Ethan_Puck
 @export var btn : Button
-@export var progress_bar : ProgressBar
+@export var Text_label : Label
 var dragged : bool = false
+var is_empty : bool = false
+var used_once : bool = false
+var is_filling : bool = false
 var Offset : Vector2 = Vector2(0,0)
 var flavour : String
 
 func _on_button_button_down() -> void:
-	dragged = true
-	Offset = get_global_mouse_position() - self.global_position
-
+	if is_filling == false:
+		dragged = true
+		Offset = get_global_mouse_position() - self.global_position
+	if is_filling == true:
+		dragged = false
 func _on_button_button_up() -> void:
 	dragged = false
 	
 func _process(delta: float) -> void:
 	if dragged == true:
-		self.global_position = lerp(global_position, get_global_mouse_position(), 0.5) - Offset  
-
-func fill_puck():
-	progress_bar.value += .5
-	
-func stop_puck_fill():
-	progress_bar.value = progress_bar.value
+		self.global_position = lerp(global_position, get_global_mouse_position(), 0.5) - Offset
+	if is_empty == true:
+		Text_label.text = "The puck needs coffee grounds"
+	if used_once == true:
+		Text_label.text = "This puck has been used"
+	  
