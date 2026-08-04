@@ -9,6 +9,9 @@
 radius = 37.0
 height = 96.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqtub"]
+size = Vector2(61, 76)
+
 [node name="Grinder" type="Node2D" unique_id=985036243 groups=["coffee bean", "idk"]]
 position = Vector2(398, 214)
 script = ExtResource("1_ngukw")
@@ -44,12 +47,11 @@ offset_right = 477.98303
 offset_bottom = -1132.9188
 
 [node name="Button" type="Button" parent="." unique_id=1075357503]
-offset_left = 110.25
-offset_top = -88.2182
-offset_right = 160.25
-offset_bottom = -34.2182
-text = "Press
-Me"
+offset_left = 110.0
+offset_top = -63.0
+offset_right = 162.0
+offset_bottom = -32.0
+text = "Grind"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=2138712474 groups=["idk"]]
@@ -72,6 +74,20 @@ position = Vector2(-2, -274)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_nm6h2")
 
+[node name="extract area" type="Area2D" parent="." unique_id=798130912]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="extract area" unique_id=1760617748]
+position = Vector2(-6.5, 159)
+shape = SubResource("RectangleShape2D_sqtub")
+
+[node name="Button2" type="Button" parent="." unique_id=521961716]
+offset_left = 110.0
+offset_top = -6.0
+offset_right = 173.0
+offset_bottom = 25.0
+scale = Vector2(0.83, 1)
+text = "Extract"
+
 [connection signal="timeout" from="grinding" to="." method="_on_grinding_timeout"]
 [connection signal="timeout" from="input_time" to="." method="_on_input_time_timeout"]
 [connection signal="pressed" from="Grinder2/opening_button" to="." method="_on_opening_button_pressed"]
@@ -79,3 +95,4 @@ shape = SubResource("CapsuleShape2D_nm6h2")
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="extract area" to="Area2D" method="_on_extract_area_body_entered"]

@@ -15,7 +15,8 @@ func _ready() -> void:
 	$Grinder2/opening_button.modulate.a = 0
 	$Grinder1/closing_button.modulate.a = 0
 	grinder_closing_act = true
-	visible()
+	grinder_close.show()
+	grinder_open.hide()
 	label.visible_characters = 0
 	label.text = "Not started yet"
 	for i in range(0,16):
@@ -44,10 +45,11 @@ func _on_button_pressed() -> void:
 		$grinding.start()
 		$input_time.start()
 
+
 func _on_grinding_timeout() -> void: #for grinding
 	label.visible_characters = 0
 	await get_tree().create_timer(0.5).timeout
-	get_tree().call_group("idk", "a")
+	get_tree().call_group("idk", "_on_extract_area_body_entered")
 	label.text = "Congrat!"
 	for i in range(0,9):
 		label.visible_characters += 1
@@ -66,6 +68,7 @@ func _on_input_time_timeout() -> void: #for input_time
 		Input_time.stop()
 		time =60
 
+
 func text_update():
 	label.text= "Please wait for 
 	"+ str(time)+ " seconds"
@@ -73,16 +76,11 @@ func text_update():
 
 func _on_closing_button_pressed() -> void:
 	grinder_closing_act = false
-	visible()
+	grinder_close.hide()
+	grinder_open.show()
+
 
 func _on_opening_button_pressed() -> void:
 	grinder_closing_act = true
-	visible()
-
-func visible():
-	if grinder_closing_act:
-		grinder_close.show()
-		grinder_open.hide()
-	else:
-		grinder_close.hide()
-		grinder_open.show()
+	grinder_close.show()
+	grinder_open.hide()
