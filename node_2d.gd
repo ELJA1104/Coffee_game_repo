@@ -6,9 +6,6 @@ var dragged : bool = false
 var Offset : Vector2 = Vector2(0,0)
 var flavour : String
 
-func _ready() -> void:
-	#progress_bar.hide()
-	pass
 func _on_button_button_down() -> void:
 	dragged = true
 	Offset = get_global_mouse_position() - self.global_position
@@ -21,7 +18,6 @@ func _process(delta: float) -> void:
 		self.global_position = lerp(global_position, get_global_mouse_position(), 0.5) - Offset  
 
 func fill_puck():
-	progress_bar.show()
 	progress_bar.value += .5
 	
 func stop_puck_fill():
