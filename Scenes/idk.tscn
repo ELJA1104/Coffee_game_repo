@@ -15,10 +15,10 @@ script = ExtResource("1_ngukw")
 metadata/_edit_horizontal_guides_ = [-56.0]
 
 [node name="grinding" type="Timer" parent="." unique_id=153467162]
-wait_time = 30.0
+wait_time = 45.0
 
 [node name="input_time" type="Timer" parent="." unique_id=828962474 groups=["idk"]]
-wait_time = 0.5
+wait_time = 0.75
 
 [node name="Grinder2" type="Sprite2D" parent="." unique_id=1782314385]
 position = Vector2(-5.25, -26.999983)

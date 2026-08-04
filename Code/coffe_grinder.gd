@@ -26,7 +26,7 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("coffee bean"):
 		coffee_entered = true
-		label.visible_characters = 0
+
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("coffee bean"):
@@ -34,10 +34,15 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		_ready()
 
 func _on_button_pressed() -> void:
-	if coffee_entered:
+	if coffee_entered and !grinder_closing_act:
+		label.visible_characters = 0
+		label.text= "Please wait for 
+		"+ str(time)+ " seconds"
+		for i in range(0,29):
+			label.visible_characters += 1
+			await get_tree().create_timer(0.05).timeout
 		$grinding.start()
 		$input_time.start()
-
 
 func _on_grinding_timeout() -> void: #for grinding
 	label.visible_characters = 0
@@ -55,15 +60,15 @@ func only_congrat():
 	label.text = "Congrat! "
 
 func _on_input_time_timeout() -> void: #for input_time
+	time -= 1
+	text_update()
+	if time == 0:
+		Input_time.stop()
+		time =60
+
+func text_update():
 	label.text= "Please wait for 
 	"+ str(time)+ " seconds"
-	time -= 1
-	for i in range(0,36):
-		label.visible_characters += 1
-		await get_tree().create_timer(0.05).timeout
-	if time >= 0:
-		Input_time.stop()
-		return
 
 
 func _on_closing_button_pressed() -> void:
