@@ -3,6 +3,8 @@ extends Node2D
 var grinder_closing_act : bool = true
 var coffee_entered :bool = false
 var time:int = 60
+var two :bool = false
+@onready var ext :Button = $Button2
 @onready var button:Button = $Button
 @onready var label :Label = $Label
 @onready var grinder_open =$Grinder2
@@ -35,7 +37,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		_ready()
 
 func _on_button_pressed() -> void:
-	if coffee_entered and !grinder_closing_act:
+	if coffee_entered and !grinder_closing_act and two:
 		label.visible_characters = 0
 		label.text= "Please wait for 
 		"+ str(time)+ " seconds"
@@ -49,14 +51,18 @@ func _on_button_pressed() -> void:
 func _on_grinding_timeout() -> void: #for grinding
 	label.visible_characters = 0
 	await get_tree().create_timer(0.5).timeout
-	get_tree().call_group("idk", "_on_extract_area_body_entered")
 	label.text = "Congrat!"
 	for i in range(0,9):
 		label.visible_characters += 1
 		await get_tree().create_timer(0.05).timeout
 	grinding.stop()
 	only_congrat()
+	reset_two()
+	coll()
 
+
+func reset_two():
+	two = false
 
 func only_congrat():
 	label.text = "Congrat! "
@@ -75,12 +81,21 @@ func text_update():
 
 
 func _on_closing_button_pressed() -> void:
-	grinder_closing_act = false
+	grinder_closing_act = true
 	grinder_close.hide()
 	grinder_open.show()
 
 
 func _on_opening_button_pressed() -> void:
-	grinder_closing_act = true
 	grinder_close.show()
 	grinder_open.hide()
+	if grinder_closing_act:
+		grinder_close.show()
+		grinder_open.hide()
+		two = true
+		grinder_closing_act = false
+
+
+func coll():
+	if ext.is_pressed:
+		get_tree().call_group("idk", "set_true")
