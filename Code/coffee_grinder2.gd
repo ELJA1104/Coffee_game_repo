@@ -5,7 +5,7 @@ extends Area2D
 
 
 var percent :float = 99
-var a :bool = true
+var a :bool = false
 @onready var puck = preload("res://Scenes/Ethan's_Puck.tscn")
 
 func set_true():
