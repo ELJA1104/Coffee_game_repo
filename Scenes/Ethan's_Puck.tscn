@@ -5,10 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fwwm"]
 size = Vector2(147, 35)
 
-[node name="Ethan\'s Puck" type="CharacterBody2D" unique_id=1459799583 node_paths=PackedStringArray("btn", "progress_bar") groups=["puck"]]
+[node name="Ethan\'s Puck" type="CharacterBody2D" unique_id=1459799583 node_paths=PackedStringArray("btn") groups=["puck"]]
 script = ExtResource("1_7w7w6")
 btn = NodePath("Button")
-progress_bar = NodePath("ProgressBar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471368098]
 position = Vector2(20.5, -11.5)

@@ -4,10 +4,9 @@ extends Area2D
 @onready var label :Label = label1
 
 
-var puck :Ethan_Puck
 var percent :float = 99
-var a :bool = false
-
+var a :bool = true
+@onready var puck = preload("res://Scenes/Ethan's_Puck.tscn")
 
 func set_true():
 	a = true
@@ -16,12 +15,5 @@ func set_true():
 func _on_extract_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("puck"):
 		if a:
-			puck.is_empty = true
-			a = false
-			
-
-func idk():
-	if puck.is_empty:
-		print("a")
-	else:
-		print("b")
+			var puck2 = puck.instantiate()
+			puck2.is_empty = false
