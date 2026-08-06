@@ -27,6 +27,13 @@ func _ready() -> void:
 		await get_tree().create_timer(0.05).timeout
 
 
+func a():
+	label.text = "Not started yet"
+	for i in range(0,16):
+		label.visible_characters += 1
+		await get_tree().create_timer(0.05).timeout
+
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("coffee bean"):
 		coffee_entered = true
@@ -36,7 +43,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("coffee bean"):
 		coffee_entered = false
-		_ready()
+		a()
 	if can:
 		can = false
 
@@ -95,8 +102,6 @@ func _on_opening_button_pressed() -> void:
 	grinder_close.show()
 	grinder_open.hide()
 	if grinder_closing_act and coffee_entered:
-		grinder_close.show()
-		grinder_open.hide()
 		two = true
 		can = true
 

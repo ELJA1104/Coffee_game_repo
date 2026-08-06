@@ -18,3 +18,10 @@ func _on_extract_area_body_entered(body: Node2D) -> void:
 		if a:
 			puck.is_empty = true
 			a = false
+			
+
+func idk():
+	if puck.is_empty:
+		print("a")
+	else:
+		print("b")
