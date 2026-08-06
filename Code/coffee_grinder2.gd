@@ -2,18 +2,18 @@ extends Area2D
 
 @onready var label1 = get_node("../Label")
 @onready var label :Label = label1
+@export var puck = Ethan_Puck
 
 
 var percent :float = 99
-var a :bool = false
-@onready var puck = preload("res://Scenes/Ethan's_Puck.tscn")
+var a :bool = true
+
 
 func set_true():
 	a = true
 
 
-func _on_extract_area_body_entered(body: Node2D) -> void:
+func _on_extract_area_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("puck"):
 		if a:
-			var puck2 = puck.instantiate()
-			puck2.is_empty = false
+			body.is_empty = false
