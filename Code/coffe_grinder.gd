@@ -4,6 +4,7 @@ var grinder_closing_act : bool = true
 var coffee_entered :bool = false
 var time:int = 60
 var two :bool = false
+var can :bool=false
 @onready var ext :Button = $Button2
 @onready var button:Button = $Button
 @onready var label :Label = $Label
@@ -31,13 +32,17 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		coffee_entered = true
 
 
+
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("coffee bean"):
 		coffee_entered = false
 		_ready()
+	if can:
+		can = false
+
 
 func _on_button_pressed() -> void:
-	if coffee_entered and !grinder_closing_act and two:
+	if coffee_entered and two and can:
 		label.visible_characters = 0
 		label.text= "Please wait for 
 		"+ str(time)+ " seconds"
@@ -89,11 +94,11 @@ func _on_closing_button_pressed() -> void:
 func _on_opening_button_pressed() -> void:
 	grinder_close.show()
 	grinder_open.hide()
-	if grinder_closing_act:
+	if grinder_closing_act and coffee_entered:
 		grinder_close.show()
 		grinder_open.hide()
 		two = true
-		grinder_closing_act = false
+		can = true
 
 
 func coll():
