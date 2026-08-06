@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 		if cup.Progress_Bar_cup.value >= 99:
 			if cup.hot_water_protocol == false:
 				text_to_be_displayed("Your " + req_temp + "cup of " + coffee_flavour + " has been brewed")
-				print("fdvk")
 			elif cup.hot_water_protocol == true:
 				text_to_be_displayed("Your cup of hot water has been brewed")
 			if Puck_detec == true:
@@ -36,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	if puck.used_once == true:
-		text_to_be_displayed("You need to clean out and refil the puck")
+		text_to_be_displayed("You need to clean out the puck")
 	elif puck.used_once == false:
 		if puck.is_empty == true:
 			text_to_be_displayed("You need  to fill the puck with coffee grounds")
