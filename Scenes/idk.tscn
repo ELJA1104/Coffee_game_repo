@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bd267dnu2okq3"]
 
 [ext_resource type="Script" uid="uid://xyxv1ja1w67t" path="res://Code/coffe_grinder.gd" id="1_ngukw"]
-[ext_resource type="Script" uid="uid://wqqs8ktegjen" path="res://Code/coffee_grinder2.gd" id="2_8su8k"]
 [ext_resource type="Texture2D" uid="uid://6r2wh0qdhhd2" path="res://Assets/PNG/grinder2.png" id="2_d43f1"]
 [ext_resource type="Texture2D" uid="uid://dy3e6ysrco2u4" path="res://Assets/PNG/grinder1.png" id="3_uj8t4"]
 
@@ -12,7 +11,7 @@ height = 96.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqtub"]
 size = Vector2(61, 76)
 
-[node name="Grinder" type="Node2D" unique_id=985036243 groups=["coffee bean", "idk"]]
+[node name="Grinder" type="Node2D" unique_id=985036243 groups=["coffee bean"]]
 position = Vector2(398, 214)
 script = ExtResource("1_ngukw")
 metadata/_edit_horizontal_guides_ = [-56.0]
@@ -20,7 +19,7 @@ metadata/_edit_horizontal_guides_ = [-56.0]
 [node name="grinding" type="Timer" parent="." unique_id=153467162]
 wait_time = 45.0
 
-[node name="input_time" type="Timer" parent="." unique_id=828962474 groups=["idk"]]
+[node name="input_time" type="Timer" parent="." unique_id=828962474]
 wait_time = 0.75
 
 [node name="Grinder2" type="Sprite2D" parent="." unique_id=1782314385]
@@ -54,7 +53,7 @@ offset_bottom = -32.0
 text = "Grind"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." unique_id=2138712474 groups=["idk"]]
+[node name="Label" type="Label" parent="." unique_id=2138712474]
 offset_left = -56.0
 offset_top = 4.9999995
 offset_right = 204.0
@@ -65,9 +64,8 @@ theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=859383585 groups=["idk"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=859383585]
 position = Vector2(-13, 164)
-script = ExtResource("2_8su8k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=705494650]
 position = Vector2(-2, -274)
@@ -95,4 +93,6 @@ text = "Extract"
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="extract area" to="Area2D" method="_on_extract_area_body_entered"]
+[connection signal="body_entered" from="extract area" to="." method="_on_extract_area_body_entered"]
+[connection signal="body_exited" from="extract area" to="." method="_on_extract_area_body_exited"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
