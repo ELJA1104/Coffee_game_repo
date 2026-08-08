@@ -1,10 +1,19 @@
 extends Node2D
 
+
+var time:int = 60
+#bool===========================================================================
+
 var grinder_closing_act : bool = true
 var coffee_entered :bool = false
-var time:int = 60
 var two :bool = false
+var can_ext:bool = false
 var can :bool=false
+#===============================================================================
+
+var puck
+#onready========================================================================
+
 @onready var ext :Button = $Button2
 @onready var button:Button = $Button
 @onready var label :Label = $Label
@@ -12,7 +21,7 @@ var can :bool=false
 @onready var grinder_close =$Grinder1
 @onready var Input_time = $input_time
 @onready var grinding = $grinding
-
+#func ==========================================================================
 
 func _ready() -> void:
 	$Grinder2/opening_button.modulate.a = 0
@@ -70,7 +79,6 @@ func _on_grinding_timeout() -> void: #for grinding
 	grinding.stop()
 	only_congrat()
 	reset_two()
-	coll()
 
 
 func reset_two():
@@ -106,6 +114,18 @@ func _on_opening_button_pressed() -> void:
 		can = true
 
 
-func coll():
-	if ext.is_pressed:
-		get_tree().call_group("idk", "set_true")
+func _on_extract_area_body_entered(body:CharacterBody2D) -> void:
+	if body is Ethan_Puck:
+		puck = Ethan_Puck
+		_on_button_2_pressed()
+
+func _on_extract_area_body_exited(body:CharacterBody2D) -> void:
+	if body is Ethan_Puck:
+		puck = null
+
+
+func _on_button_2_pressed() -> void:
+	if puck: 
+		puck.is_empty = false
+	else:
+		puck.is_empty = true
