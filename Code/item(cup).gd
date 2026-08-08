@@ -1,23 +1,24 @@
 extends CharacterBody2D
 class_name Cup_node
+var ice_cube
 var when_is_grab_cup : bool = false
 var mouse_inside_cup : bool = false
 var can_add_things : bool = false
-var hot_water_protocol : bool = false
 @export var Progress_Bar_cup : ProgressBar
-@export var ice : Node2D
 @export var Text_label : Label
 var flavour : String
 var temp : String
-var ran_ice  : bool = true
-var ran_drink = randi_range(0,6)
+var ran_ice  = 0
+var ran_drink = 0
 
 
 func _ready():
+	add_to_group("cup")
+	$Area2D.body_entered.connect(_on_area_2d_body_entered)
+	$Area2D.body_exited.connect(_on_area_2d_body_exited)
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	Progress_Bar_cup.hide()
-	Noel_sEvent.cup_tp_permition.connect(tp_cup)
 	drink_select()
 	hot_or_iced()
 	text_to_be_displayed(temp + flavour )
@@ -30,6 +31,19 @@ func _process(_delta):
 		var _mouse_pos = get_global_mouse_position()
 		global_position = lerp(global_position,_mouse_pos,0.2)
 		return
+
+	if can_add_things and Progress_Bar_cup.visible:
+		if Progress_Bar_cup.value < Progress_Bar_cup.max_value:
+			Progress_Bar_cup.value += 0.5
+		else:
+			if _ingredians == 1 :
+				print('ice done')
+				Progress_Bar_cup.hide()
+				Progress_Bar_cup.value = 0
+				can_add_things = false 
+				ran_ice += 1
+				hot_or_iced()
+				ice_cube.tp_to_spwaner()
 
 
 
@@ -69,70 +83,28 @@ func cup_return_to_zero():
 	Progress_Bar_cup.value = 0
 	pass
 #=================================================================================================================================================================
-func no_in():
+var _ingredians 
+#ice cube = 1
+func _on_area_2d_body_entered(body):
+	can_add_things = true
+	Progress_Bar_cup.show()
+	print(body.name)
+	if body.is_in_group("ice cube"):
+		_ingredians = 1
+	if body is Ice_cube_node:
+		ice_cube = body
+
+func _on_area_2d_body_exited(body):
 	can_add_things = false
-	print('stop add things *2')
-	
-func ice_in():
-	can_add_things = true
-	await get_tree().create_timer(3).timeout
-	if can_add_things:
-		Noel_sEvent.ice_hidden_permition.emit() 
-		Progress_Bar_cup.show()
-		while Progress_Bar_cup.value < Progress_Bar_cup.max_value:
-			Progress_Bar_cup.value += 0.5
-			await get_tree().create_timer(0.05).timeout
-		print('ice done')
-		add_to_group("add_label:ice")
-		Progress_Bar_cup.hide()
-		Progress_Bar_cup.value = 0
-		ran_ice = false
-		hot_or_iced()
-	else:
-		pass
-	
-func milk_in():
-	can_add_things = true
-	await get_tree().create_timer(3).timeout
-	if can_add_things:
-		Noel_sEvent.milk_hidden_permition.emit() 
-		Progress_Bar_cup.show()
-		while Progress_Bar_cup.value < Progress_Bar_cup.max_value:
-			Progress_Bar_cup.value += 0.5
-			await get_tree().create_timer(0.05).timeout
-		print('milk done')
-		add_to_group("add_label:milk")
-		Progress_Bar_cup.hide()
-		Progress_Bar_cup.value = 0
-	else:
-		pass
-		
-func sugar_in():
-	can_add_things = true
-	await get_tree().create_timer(3).timeout
-	if can_add_things:
-		Noel_sEvent.sugar_hidden_permition.emit() 
-		Progress_Bar_cup.show()
-		while Progress_Bar_cup.value < Progress_Bar_cup.max_value:
-			Progress_Bar_cup.value += 0.5
-			await get_tree().create_timer(0.05).timeout
-		print('sugar in')
-		add_to_group("add_label:sugar")
-		Progress_Bar_cup.hide()
-		Progress_Bar_cup.value = 0
-	else:
-		pass
-		
+	Progress_Bar_cup.hide()
+	Progress_Bar_cup.value = 0
+	print(body.name)
+	print('is go out')
+
+
+
 #======================================================================
-
-#====================================================================
-func tp_cup(cup):
-	global_position = cup
-#========================================================
-
-'func blablabla():
-	Noel_sEvent.cup_tp_permition.emit(global_position) '
-
+var adding_milk
 func drink_select():
 	if ran_drink == 0:
 		flavour = "Water"
@@ -151,16 +123,20 @@ func drink_select():
 
 
 func hot_or_iced():
-	if ran_ice:
+	if ran_ice == 0:
 		print('hot')
 		temp = "Hot "
-	else:
+	elif ran_ice == 1:
+		print('normal')
+		temp = "Warm "
+	elif ran_ice == 2:
 		print('cold')
-		temp = "Iced "
-	if temp == "Iced " and flavour == "Water":
-		temp = "Hot "
+		temp = "Cold "
+
+	if temp == "Cold " and flavour == "Water":
+		temp = "Cold  "
 	if temp == "Hot " and flavour == "Water":
-		hot_water_protocol = true
+		temp = "Hot  "
 	text_to_be_displayed(temp + flavour )
 	
 func displaying_text():
